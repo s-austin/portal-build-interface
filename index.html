@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <title property="name">Baseline Prototype</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/base1a.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12" style="margin-bottom:20px;">
+                <header itemprop="mainEntityOfPage"><h1>Prototype USFSP Custom Interface</h1></header>
+            </div><!-- closes inner div for choices courses, knowledgebase, chat, and dashboard -->
+        </div><!-- closes row for h1 title area -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs" id="top-tab-choice">
+                  <li id="tab-choice-course" role="presentation" class="active"><a id="choice-course-selection" href="#" data-target="custom-search-step-1"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Choose Courses</a></li>
+                  <li id="tab-choice-faq" role="presentation"><a id="choice-faq-selection" href="#" data-target="target-choice-faq"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>FAQs</a></li>
+                  <li id="tab-choice-chat" role="presentation"><a id="choice-chat-selection" href="#" data-target="target-choice-chat"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>Chat</a></li>
+                  <li id="tab-choice-dashboard" role="presentation"><a id="choice-dashboard-selection" href="#" data-target="target-choice-dashboard"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Dashboard</a></li>
+                </ul>
+            </div><!-- closes col xs 12 for top tab courses, knowledgebase, chat, and dashboard -->
+        </div><!-- closes choices area for courses, knowledgebase, chat, and dashboard -->
+        <div class="row"><!-- row for custom course search -->
+            <div class="col-xs-12">
+                <header itemprop="workExample"><h2>USFSP Custom Course Search</h2></header>
+            </div><!-- closes col xs 12 for h1 title area-->
+            <div class="col-xs-12">
+                <p>Select campuses, semesters and formats you want to search. Then, browse by course title, department or college.</p>
+            </div><!-- closes col xs 12 for h1 title area-->
+        </div><!--closes div class row for h1 title area -->
+        <div id="custom-search-step-1" class="row">
+            <div id="institution-step" class="col-sm-4"><h3 id="button-search1" data-target="browse-college"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>Campus</h3>
+            <button type="button" class="btn btn-default btn-sm" name="USFSM-button" value="USFSM-button" id="i-sarasota">Sarasota Manatee</button>
+            <button type="button" class="btn btn-default btn-sm" name="USFSP-button" value="USFSP-button" id="i-stpete">St. Petersburg</button>
+            <button type="button" class="btn btn-default btn-sm" name="USF-button" value="USF-button" id="i-tampa">Tampa</button>
+                
+            </div>
+
+            <div id="semester-chooser" class="col-sm-4">
+
+
+                <h3 id="button-search-semester" data-target="filter-semester"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Semester</h3>
+
+<!--
+            <button type="button" class="btn btn-default btn-sm">Fall 2015</button>
+            <button type="button" class="btn btn-success btn-sm active">Spring 2016</button>
+            <button type="button" class="btn btn-default btn-sm">Summer 2016</button>
+-->            
+
+            </div>
+            <div class="col-sm-4"><h3 id="button-search3" data-target="filter-online"><span class="glyphicon glyphicon-random" aria-hidden="true"></span>Format</h3>
+
+            <button type="button" class="btn btn-success-usfsp btn-sm active">Online</button>
+            <button type="button" class="btn btn-default btn-sm">On Campus</button>
+
+            </div>
+ 
+        </div>
+
+
+        <div id="custom-search-step-2" class="row">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs">
+                  <li id="tab1" role="presentation" class="active"><a id="tab-course" href="#" data-target="tab-filter-course"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>By Courses</a></li>
+                  <li id="tab2" role="presentation"><a id="tab-department" href="#" data-target="tab-filter-dept"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>By Departments</a></li>
+                  <li id="tab3" role="presentation"><a id="tab-campus" href="#" data-target="tab-filter-campus"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>By Colleges</a></li>
+                </ul>
+            </div><!-- closes col xs 12 -->
+       </div>
+
+        <div id="tab-filter-course" class="row">
+            <div class="col-xs-12">
+                <section><!-- opening section for tab target one -->
+                  <form id="course-selection-form1" onsubmit="return false;">
+                        <label for="custom-course-search" role="search" class="search-label">Search Course Titles</label>
+                        <input id="custom-course-search" class="search-box">
+                  </form><!-- end course-selection-form1 -->
+                </section><!-- container for second form -->
+             
+            </div><!-- closes col-xs-12 -->
+        </div><!-- closes id tab-filter course -->
+
+
+        <div id="tab-filter-dept" class="row">
+            <div class="col-xs-12">
+                <section><!-- opening section for tab target two -->
+                <form id="course-selection-form2"><!-- second form for getting courses-->
+                    <header><h3>Search Courses by Department</h3></header>
+                     <div id="browse-department-selection">
+                        <!-- searches from tabs go here -->
+                    </div>
+                    <!-- <h5>By Department input: autodepartment</h5> -->
+                        <label for="autodepartment">Department Selections: </label>
+                        <input id="autodepartment">
+                        <section id="search-results-departments">
+                    <h4>Search Department Results</h4></section>
+
+                </section><!-- container for second form -->
+                </form><!--end course-selection-form2 -->
+            </div><!-- closes col-xs-12 -->
+        </div><!-- closes tab-filter-dept -->
+
+
+
+        <div id="tab-filter-campus" class="row">
+            <div class="col-xs-12">
+
+    <section  itemprop="publisher" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+      <header><h3 class="hide-checkboxes">Step 1: Select Colleges</h3></header>
+
+                 <fieldset id="college-step">
+
+                    <legend class='sr-only'>Step 1: Select Colleges</legend>
+
+                    <ul style="list-style:none;">
+                        <li><input type="checkbox" name="Arts and Sciences SM AM" value="Arts and Sciences SM AM" class="i-sarasota"  id="c-am"><label for="c-am">Arts & Sciences(USF Sarasota-Manatee) </label></li>
+                        <li><input type="checkbox" name="Arts and Sciences SP AP" value="Arts and Sciences SM AP" class="i-stpete"  id="c-ap"><label for="c-ap">Arts & Sciences (USF St. Petersburg) </label></li>
+                        <li><input type="checkbox" name="Architecture and Community Design Other AR" value="Architecture and Community Design Other AR" class="i-other" id="c-ar"><label for="c-ar">Architecture and Community Design (Other) </label></li>
+                        <li><input type="checkbox" name="Arts and Sciences Tampa AS" value="Arts and Sciences Tampa AS" class="i-tampa"  id="c-as"><label for="c-as">Arts & Sciences (USF Tampa) </label></li>
+                        <li><input type="checkbox" name="Applied Arts and New Media Other AT" value="Applied Arts and New Media Other AT" class="i-other"  id="c-at"><label for="c-at">Applied Arts and New Media (Other)</label></li>
+
+
+                        <li><input type="checkbox" name="Business Tampa BA" value="Business Tampa BA" class="i-tampa" id="c-ba"><label for="c-ba">Business (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Behavioral and Community Sciences Other" value="Behavioral and Community Sciences" class="i-other" id="c-bc"><label for="c-bc">Behavioral and Community Sciences (Other)</label></li>
+                        <li><input type="checkbox" name="Business SP BP" value="Business SP BP" class="i-stpete" id="c-bp"><label for="c-bp">Business (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Business SM BM" value="Business SM BM" class="i-sarasota" id="c-bm"><label for="c-bm">Business (USF Sarasota-Manatee)</label></li>
+
+                        <li><input type="checkbox" name="Global Sustainability Other CS" value="Global Sustainability Other CS" class="i-other" id="c-cs"><label for="c-cs">Global Sustainability (Other)</label></li>
+
+                        <li><input type="checkbox" name="Education Tampa ED" value="Education Tampa ED" class="i-tampa" id="c-ed"><label for="c-ed">Education (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Education SP EP" value="Education SP EP" class="i-stpete" id="c-ep"><label for="c-ep">Education (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Engineering Other EN" value="Engineering Other EN" class="i-other" id="c-en"><label for="c-en">Engineering (Other)</label></li>
+                        <li><input type="checkbox" name="Education SM EM" value="Education SM EM" class="i-sarasota" id="c-em"><label for="c-em">Education (USF Sarasota-Manatee) </label></li>
+
+                        <li><input type="checkbox" name="College of The Arts Other FA" value="College of The Arts Other FA" class="i-other" id="c-fa"><label for="c-fa">College of The Arts (Other)</label></li>
+                        <li><input type="checkbox" name="FMHI:de la Parte Florida Mental Health Institute Other FM" value="FMHI:de la Parte Florida Mental Health Institute Other FM" class="i-other" id="c-fm"><label for="c-fm">FMHI: de la Parte Florida Mental Health Institute (Other)</label></li>
+
+                        <li><input type="checkbox" name="Graduate School Other GS" value="Graduate School Other GS" class="i-other" id="c-gs"><label for="c-gs">Graduate School (Other)</label></li>
+
+                        <li><input type="checkbox" name="Honors College Otehr HC" value="Honors College Otehr HC" class="i-other" id="c-hc"><label for="c-hc">Honors College (Other)</label></li>
+                        <li><input type="checkbox" name="Hosp and Tourism Leadership, Hotel and Restaurant Management SM HM" value="HHosp and Tourism Leadership, Hotel and Restaurant Management SM HM" class="i-sarasota" id="c-hm"><label for="c-hm">Hosp and Tourism Leadership, Hotel and Restaurant Management (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Human and Social Sciences Other HT" value="Human and Social Sciences Other HT" class="i-other" id="c-ht"><label for="c-ht">Human and Social Sciences (Other)</label></li>
+
+                        <li><input type="checkbox" name="Medicine Other MD" value="Medicine Other MD" class="i-other" id="c-md"><label for="c-md">Medicine (Other)</label></li>
+                        <li><input type="checkbox" name="Marine Science Other MS" value="Marine Science Other MS" class="i-other"  id="c-ms"><label for="c-ms">Marine Science (Other)</label></li>
+
+                        <li><input type="checkbox" name="Nursing Other NR" value="Nursing Other NR" class="i-other"  id="c-nr"><label for="c-nr">Nursing (Other)</label></li>
+
+                        <li><input type="checkbox" name="Public Health Other PH" value="Public Health Other PH" class="i-other" id="c-ph"><label for="c-ph">Public Health (Other) (PH)</label></li>
+
+                        <li><input type="checkbox" name="Technology and Innovation Other TT" value="Technology and Innovation Other TT" class="i-other" id="c-tt"><label for="c-tt">Technology and Innovation (Other)</label></li>
+
+                        <li><input type="checkbox" name="Undergraduate Studies Tampa US" value="Undergraduate Studies Tampa US" class="i-tampa" id="c-us"><label for="c-us">Undergraduate Studies (USF Tampa)</label></li>
+                    </ul>
+
+           </fieldset>
+    </section>
+
+
+    <section id="department-list" itemprop="publisher" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+      <header><h3 class="hide-checkboxes">Step 2: Select Departments & Programs</h3></header>
+        <!--note for department section, use three digit code. For college section use two digit code -->
+      <fieldset id="department-step">
+                <legend class='sr-only'>Step 2: Select Departments & Programs</legend>
+                    <ul id="department-result-set-2">
+                        <li><input type="checkbox" name="Accounting Tampa ACC BA" data-institution="(i-tampa)" value="Accounting Tampa ACC BA" class="c-ba i-tampa" id="p-ba-acc"><label for="p-ba-acc" data-code="ACC"><span itemprop="department">Accounting</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Accounting SP ACC BP" data-institution="(i-stpete)" value="Accounting SP ACC BP" class="c-bp i-stpete" id="p-bp-acc"><label for="p-bp-acc" data-code="ACC"><span itemprop="department">Accounting</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Accounting SM ACC BM" data-institution="(i-sarasota)" value="Accounting SM ACC BM" class="c-bm i-sarasota" id="p-bm-acc"><label for="p-bm-acc" data-code="ACC"><span itemprop="department">Accounting</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Accounting Other ACC TT" data-institution="(i-other)" value="Accounting Other ACC TT" class="c-tt i-other" id="p-tt-acc"><label for="p-tt-acc" data-code="ACC"><span itemprop="department">Accounting</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="Administration/Supervision SM EDB EM" value="Administration/Supervision SM EDB EM" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edb"><label for="p-em-edb" data-code="EDB"<span itemprop="department">Administration/Supervision</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Administration/Supervision SP EDB EP" value="Administration/Supervision SP EDB EP" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edb"><label for="p-ep-edb" data-code="EDB"><span itemprop="department">Administration/Supervision</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Administration/Supervision Tampa EDB ED" value="Administration/Supervision Tampa EDB ED" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edb"><label for="p-ed-edb" data-code="EDB"><span itemprop="department">Administration/Supervision</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Administration/Supervision Other EDB HT" value="Administration/Supervision Other EDB HT" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edb"><label for="p-ht-edb" data-code=""><span itemprop="department">Administration/Supervision </span>(Other) Human and Social Sciences</label></li>
+                        
+                        
+                        <li><input type="checkbox" name="Adult/Vocational/Hum Res Div Tampa" value="Adult/Vocational/Hum Res Div Tampa" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edv"><label for="p-ed-edv" data-code="EDV"><span itemprop="department">Adult/Vocational/Hum Res Div</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Africana Studies Tampa AFA AS" value="Africana Studies Tampa AFA AS" data-institution="(i-tampa)" class="c-as i-tampa"  id="p-as-afa"><label for="p-as-afa" data-code="AFA"><span itemprop="department">Africana Studies</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Africana Studies SM AFA AM" value="Africana Studies SM AFA AM" data-institution="(i-sarasota)" class="c-am i-sarasota"  id="p-am-afa"><label for="p-am-afa" data-code="AFA"><span itemprop="department">Africana Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Africana Studies Other AFA BC" value="Africana Studies Other AFA BC" data-institution="(i-other)" class="c-bc i-other"  id="p-bc-afa"><label for="p-bc-afa" data-code="AFA"><span itemprop="department">Africana Studies</span> (Other) Behavioral and Community Sciences</label></li>
+
+                    
+                        <li><input type="checkbox" name="Aging Studies Other AGE BC" value="Aging Studies Other AGE BC" data-institution="(i-other)" class="c-bc i-other"  id="p-bc-age"><label for="p-bc-age" data-code="AGE"><span itemprop="department">Aging Studies</span> (Other) Behavioral and Community Science</label></li>
+
+                        
+                        <li><input type="checkbox" name="Air Force (ROTC) Tampa" value="Air Force (ROTC) Tampa US" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-afr"><label for="p-us-afr" data-code="AFR"><span itemprop="department">Air Force</span> (ROTC) (USF Tampa) Undergratudate Studies</label></li>
+                        
+                        <li><input type="checkbox" name="American Studies Tampa AMS AS" value="American Studies Tampa AMS AS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-ams"><label for="p-as-ams" data-code="AMS"><span itemprop="department">American Studies</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="American Studies SP AMS AP" value="American Studies SP AMS AP" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-ams"><label for="p-ap-ams" data-code="AMS"><span itemprop="department">American Studies</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Anthropology Tampa ANT AS" value="Anthropology Tampa ANT AS" data-institution="(i-tampa)"  class="c-as i-tampa" id="p-as-ant"><label for="p-as-ant" data-code="ANT"><span itemprop="department">Anthropology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Anthropology SP ANT AP" value="Anthropology SP ANT AP" data-institution="(i-stpete)"  class="c-ap i-stpete" id="p-ap-ant"><label for="p-ap-ant" data-code="ANT"><span itemprop="department">Anthropology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Anthropology SM ANT AM " value="Anthropology SM ANT AM" data-institution="(i-sarasota)"  class="c-am i-sarasota" id="p-am-ant"><label for="p-am-ant" data-code="ANT"><span itemprop="department">Anthropology</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Architecture ARC AR" value="Architecture Other" data-institution="(i-other)" class="c-ar i-other" id="p-ar-arc"><label for="p-ar-arc" data-code="ARC"><span itemprop="department">Architecture</span> (Other) Architecture & Community Design</label></li>
+                        <li><input type="checkbox" name="Architecture Other ARC FA" value="College of the Arts Other" data-institution="(i-other)" class="c-fa i-other" id="p-fa-arc"><label for="p-fa-arc" data-code="ARC"><span itemprop="department">Architecture</span> (Other) College of the Arts</label></li>
+                        
+                        <li><input type="checkbox" name="Army (ROTC) Tampa MIS US" value="Army (ROTC) Tampa" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-mis"><label for="p-us-mis" data-code="MIS"><span itemprop="department">Army (ROTC)</span> (USF Tampa) Undergraduate Studies</label></li>
+                        
+                        <li><input type="checkbox" name="Art SP AP ART" value="Art SP AP ART" data-institution="(i-stpete)"  class="c-ap i-stpete" id="p-ap-art"><label for="p-ap-art" data-code="ART"><span itemprop="department">Art</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Art SM AM ART" value="Art SM AM ART" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-art"><label for="p-am-art" data-code="ART"><span itemprop="department">Art</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Art Other FA ART" value="Art Other FA ART" data-institution="(other)"  class="c-fa other" id="p-fa-art"><label for="p-fa-art" data-code="ART"><span itemprop="department">Art</span> (Other) College of the Arts</label></li>
+                        
+                        <li><input type="checkbox" name="Art Education Tampa ED EDA" value="Art Education Tampa ED EDA" data-institution="(i-tampa)"  class="c-ed i-tampa" id="p-ed-eda"><label for="p-ed-eda" data-code="EDA"><span itemprop="department">Art Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Art Education SP EP EDA" value="Art Education SP EP EDA" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-eda"><label for="p-ep-eda" data-code="EDA"><span itemprop="department">Art Education</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Astronomy Tampa AS AST" value="Astronomy Tampa AS AST" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-ast"><label for="p-as-ast" data-code="AST"><span itemprop="department">Astronomy</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Astronomy SM AM AST" value="Astronomy SM AM AST" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-ast"><label for="p-am-ast" data-code="AST"><span itemprop="department">Astronomy</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Athletic Training Other MD ATH" value="Athletic Training Other MD ATH" data-institution="(i-other)" class="c-md i-other" id="p-md-ath"><label for="p-md-ath" data-code="ATH"><span itemprop="department">Athletic Training</span> (Other) (MD) Medicine</label></li>
+                        
+                        <li><input type="checkbox" name="Basic & Interdisciplinary Eng Other EN EGB" value="Basic & Interdisciplinary Eng Other EN EGB" data-institution="(i-other)" class="c-en i-other" id="p-en-egb"><label for="p-en-egb" data-code="EGB"><span itemprop="department">Basic & Interdisciplinary Eng</span> (Other) Engineering</label></li>
+                        <li><input type="checkbox" name="Basic & Interdisciplinary Eng Other TT EGB " value="Basic & Interdisciplinary Eng Other TT EGB" data-institution="(i-other)" class="c-tt i-other" id="p-tt-egb"><label for="p-tt-egb" data-code="EGB"><span itemprop="department">Basic & Interdisciplinary Eng</span> (Other) Technology and Innovation</label></li>
+
+                        
+                        <li><input type="checkbox" name="Biology Tampa AS BIO" value="Biology Tampa AS BIO" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-bio" data-code="BIO"><label for="p-as-bio"><span itemprop="department">Biology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Biology SP AP BIO" value="Biology SP AP BIO" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-bio"><label for="p-ap-bio" data-code="BIO"><span itemprop="department">Biology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Biology SM AM BIO" value="Biology SM AM BIO" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-bio"><label for="p-am-bio" data-code="BIO"><span itemprop="department">Biology</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Biology - Integrative Tampa AS BIN" value="Biology - Integrative Tampa AS BIN" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-bin"><label for="p-as-bin" data-code="BIN"><span itemprop="department">Biology - Integrative</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Biology-Cell, Micro, Molecular Tampa AS BCM 1" value="Biology-Cell, Micro, Molecular Tampa AS BCM 1" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-bcm1"><label for="p-as-bcm1" data-code="BCM"><span itemprop="department">Biology-Cell, Micro, Molecular</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Biology-Cell, Molecular & Micr Tampa" value="Biology-Cell, Molecular & Micr Tampa" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-bcm2"><label for="p-as-bcm2" data-code="BCM"><span itemprop="department">Biology-Cell, Molecular & Micr</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Business Administration Tampa BA MBA" value="Business Administration Tampa BA MBA" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-mba"><label for="p-ba-mba" data-code="MBA"><span itemprop="department">Business Administration</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Business Administration SP BP MBA" value="Business Administration SP BP MBA" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-mba"><label for="p-bp-mba" data-code="MBA"><span itemprop="department">Business Administration</span>(USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Business Administration Tampa BA GBA" value="Business Administration Tampa BA GBA" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-gba"><label for="p-ba-gba" data-code="GBA"><span itemprop="department">Business Administration - Gen</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Business Administration SP BP GBA" value="Business Administration SP BP GBA" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-gba"><label for="p-bp-gba" data-code="GBA"><span itemprop="department">Business Administration - Gen</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Business Administration SM BM GBA" value="Business Administration SM BM GBA" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-gba"><label for="p-bm-gba" data-code="GBA"><span itemprop="department">Business Administration - Gen</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Business Administration Other TT GBA" value="Business Administration Other TT GBA" data-institution="(i-other)" class="c-tt i-other" id="p-tt-gba"><label for="p-tt-gba" data-code="GBA"><span itemprop="department">Business Administration - Gen</span> (Other) Technology and Innovation</label></li>
+
+
+                        <li><input type="checkbox" name="Cell, Micro, and Molecular Bio Tampa AS CMM" value="Cell, Micro, and Molecular Bio Tampa AS CMM" data-institution="(i-other)" class="c-as i-tampa" id="p-as-cmm"><label for="p-as-cmm" data-code="CMM"><span itemprop="department">Cell, Micro, and Molecular Bio </span>(USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Chemical & Biomedical Eng Other EN ECH" value="Chemical & Biomedical Eng Other EN ECH" data-institution="(i-other)" class="c-en i-other" id="p-en-ech"><label for="p-en-ech" data-code="ECH"><span itemprop="department">Chemical & Biomedical Eng</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="Chemistry Tampa AS CHM" value="Chemistry Tampa AS CHM" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-chm"><label for="p-as-chm"  data-code="CHM"><span itemprop="department">Chemistry</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Chemistry SP AP CHM" value="Chemistry SP AP CHM" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-chm"><label for="p-ap-chm"  data-code="CHM"><span itemprop="department">Chemistry</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Chemistry SM AM CHM" value="Chemistry SM AM CHM" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-chm"><label for="p-am-chm"  data-code="CHM"><span itemprop="department">Chemistry</span>(USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Child & Family Studies Other BC CFS" value="Child & Family Studies Other BC CFS"  data-institution="(i-other)" class="c-bc i-other" id="p-bc-cfs"><label for="p-bc-cfs" data-code="CFS">Child and Family Studies (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Child & Family Studies Other FM CFS" value="Child & Family Studies Other FM CFS"  data-institution="(i-other)" class="c-fm i-other" id="p-fm-cfm"><label for="p-fm-cfm" data-code="CFS">Child and Family Studies (Other) FMHI: de la Parte Florida Mental Health Institute </label></li>
+                        
+                        <li><input type="checkbox" name="Childhood Ed & Literacy Stdies Tampa ED EDR" value="Childhood Ed & Literacy Stdies Tampa ED EDR" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edr"><label for="p-ed-edr" data-code="EDR"><span itemprop="department">Childhood Ed & Literacy Stdies</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Childhood Ed & Literacy Stdies SP EP EDR" value="Childhood Ed & Literacy Stdies SP EP EDR" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edr"><label for="p-ep-edr" data-code="EDR"><span itemprop="department">Childhood Ed & Literacy Stdies</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Childhood Ed & Literacy Stdies SM EM EDR" value="Childhood Ed & Literacy Stdies SM EM EDR" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edr"><label for="p-em-edr" data-code="EDR"><span itemprop="department">Childhood Ed & Literacy Stdies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Childhood Ed & Literacy Stdies Other HT EDR" value="Childhood Ed & Literacy Stdies Other HT EDR" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edr"><label for="p-ht-edr" data-code="EDR"><span itemprop="department">Childhood Ed & Literacy Stdies</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Civil & Environmental Eng Other EN EGX" value="Civil & Environmental Eng Other EN EGX" data-institution="(i-other)" class="c-en i-other" id="p-en-egx"><label for="p-en-egx" data-code="EGX"><span itemprop="department">Civil & Environmental Eng</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="Classics (Greek and Latin) Tampa AS CLA" value="Classics (Greek and Latin) Tampa AS CLA" data-institution="(i-tampa)" class="c-as i-tampa" id="p-cla-as"><label for="p-cla-as" data-code="CLA"><span itemprop="department">Classics</span> (Greek and Latin) (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Co-op Education Tampa US COE" value="Co-op Education Tampa US COE" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-coe"><label for="p-us-coe" data-code="COE"><span itemprop="department">Co-op Education</span> (USF Tampa) Undergraduate Studies</label></li>
+                        <li><input type="checkbox" name="Co-op Education SP EP COE" value="Co-op Education SP EP COE" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-coe-ep"><label for="p-coe-ep" data-code="COE"><span itemprop="department">Co-op Education</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Communication Other AT SPE" value="Communication Other AT SPE" data-institution="(i-other)" class="c-at i-other" id="p-at-spe"><label for="p-at-spe" data-code="SPE"><span itemprop="department">Communication</span> (Other) Applied Arts and New Media</label></li>
+                        <li><input type="checkbox" name="Communication SM AM SPE" value="Communication SM AM SPE" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-spe"><label for="p-am-spe" data-code="SPE"><span itemprop="department">Communication </span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Communication SP AP SPE" value="Communication SP AP SPE" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-spe"><label for="p-ap-spe" data-code="SPE"><span itemprop="department">Communication</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Communication Tampa AS SPE" value="Communication Tampa AS SPE" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-spe"><label for="p-as-spe" data-code="SPE"><span itemprop="department">Communication </span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Communication SP EP SPE" value="Communication SP EP SPE" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-spe"><label for="p-ep-spe" data-code="SPE"><span itemprop="department">Communication</span> (USF St. Petersburg)</label></li>
+
+                        <li><input type="checkbox" name="Communication Sciences & Disorders SP AP CSD" value="Communication Sciences & Disorders SP AP CSD" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-csd"><label for="p-ap-csd" data-code="CSD"><span itemprop="department">Communication Sciences & Disorders</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Communication Sciences & Disorders SM AM CSD" value="Communication Sciences & Disorders SM AM CSD" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-csd"><label for="p-am-csd" data-code="CSD"><span itemprop="department">Communication Sciences & Disorders</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Communication Sciences & Disorders Other BC CSD" value="Communication Sciences & Disorders Other BC CSD" data-institution="(i-other)" class="c-bc i-other" id="p-bc-csd"><label for="p-bc-csd" data-code="CSD"><span itemprop="department">Communication Sciences & Disorders</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Communication Sciences & Disorders SP EP CSD" value="Communication Sciences & Disorders SP EP CSD" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ed-csd"><label for="p-ed-csd" data-code="CSD"><span itemprop="department">Communication Sciences & Disorders</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Community and Family Health Other BC CFH" value="Community and Family Health Other BC CFH" data-institution="(i-other)" class="c-bc i-other" id="p-bc-cfh"><label for="p-bc-cfh" data-code="CFH"><span itemprop="department">Community and Family Health</span>(Other) (Behavioral and Community Sciences)</label></li>
+                        <li><input type="checkbox" name="Community and Family Health Other FM CFH" value="Community and Family Health Other FM CFH" data-institution="(i-other)" class="c-fm i-other" id="p-fm-cfh"><label for="p-fm-cfh" data-code="CFH"><span itemprop="department">Community and Family Health </span> (Other) FMHI: de la Parte Florida Mental Health Institute </label></li>
+                        <li><input type="checkbox" name="Community and Family Health Other PH CFH" value="Community and Family Health Other PH CFH" data-institution="(i-other)" class="c-ph i-other" id="p-ph-cfh"><label for="p-ph-cfh" data-code="CFH"><span itemprop="department">Community and Family Health</span> (Other) Public Health</label></li>
+
+                        
+                        <li><input type="checkbox" name="Community Experiential Learning Tamap AS CEL" value="Community Experiential Learning Tampa AS CEL" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-cel"><label for="p-as-cel" data-code="CEL"><span itemprop="department">Community Experiential Learning</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Counselor Education Tampa ED EDG" value="Counselor Education Tampa ED EDG" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edg"><label for="p-ed-edg" data-code="EDG"><span itemprop="department">Counselor Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Counselor Education SP EP EDG" value="Counselor Education SP EP EDG" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edg" data-code="EDG"><label for="p-ep-edg"><span itemprop="department">Counselor Education</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Counselor Education Other HT EDG" value="Counselor Education Other HT EDG" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edg"><label for="p-ht-edg" data-code="EDG"><span itemprop="department">Counselor Education</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Criminology SM AM CJP" value="Criminology SM AM CJP" data-institution="(i-sarastoa)"  class="c-am i-sarasota" id="p-am-cjp"><label for="p-am-cjp" data-code="CJP"><span itemprop="department">Criminology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Criminology SP AP CJP" value="Criminology SP AP CJP" data-institution="(i-stpete)"  class="c-ap i-stpete" id="p-ap-cjp"><label for="p-ap-cjp" data-code="CJP"><span itemprop="department">Criminology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Criminology Tampa AS CJP" value="Criminology Tampa AS CJP" data-institution="(i-tampa)"  class="c-as i-tampa" id="p-as-cjp"><label for="p-as-cjp" data-code="CJP"><span itemprop="department">Criminology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Criminology Other BC CJP" value="Criminology Other BC CJP" data-institution="(i-other)" class="c-bc i-other" id="p-bc-cjp"><label for="p-bc-cjp" data-code="CJP"><span itemprop="department">Criminology</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Criminology Other HT CJP" value="Criminology Other HT CJP" data-institution="(i-other)" class="c-ht i-other" id="p-ht-cjp"><label for="p-ht-cjp" data-code="CJP"><span itemprop="department">Criminology </span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Curriculum Other BC EDC" value="Curriculum Other BC EDC" data-institution="(i-other)" class="c-bc i-other" id="p-bc-edc"><label for="p-bc-edc" data-code="EDC"><span itemprop="department">Curriculum </span>(Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Curriculum SP EP EDC" value="Curriculum SP EP EDC" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edc"><label for="p-ep-edc" data-code="EDC"><span itemprop="department">Curriculum</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Curriculum Tampa ED EDC" value="Curriculum Tampa ED EDC" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edc"><label for="p-ed-edc" data-code="EDC"><span itemprop="department">Curriculum</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Curriculum Other HT EDC" value="Curriculum HT ED EDC" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edc"><label for="p-ht-edc" data-code="EDC"><span itemprop="department">Curriculum</span> (Other) Human and Social Services</label></li>
+                        
+                        <li><input type="checkbox" name="Dance Other FA DAN" value="Dance Other FA DAN" data-institution="(i-other)" class="c-fa i-other" id="p-fa-dan"><label for="p-fa-dan" data-code="DAN"><span itemprop="department">Dance</span> (Other) College of the Arts</label></li>
+                        
+                        <li><input type="checkbox" name="Dean's Office Tampa BA DEA" value="Dean's Office Tampa BA DEA" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-dea"><label for="p-ba-dea" data-code="DEA"><span itemprop="department">Dean's Office</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Dean's Office Tampa ED DEA" value="Dean's Office Tampa ED DEA" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-dea"><label for="p-ed-dea" data-code="DEA"><span itemprop="department">Dean's Office</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Dean's Office Other CS DEA" value="Dean's Office Other CS DEA" data-institution="(i-other)" class="c-cs i-other" id="p-cs-dea"><label for="p-cs-dea" data-code="DEA"><span itemprop="department">Dean's Office</span> (Other) Global Sustainability</label></li>
+                        <li><input type="checkbox" name="Dean's Office Other HT DEA" value="Dean's Office Other HT DEA" data-institution="(i-other)" class="c-ht i-other" id="p-ht-dea"><label for="p-ht-dea" data-code="DEA"><span itemprop="department">Dean's Office</span> (Other) Human and Social Sciences</label></li>
+                        <li><input type="checkbox" name="Dean's Office Tampa US DEA" value="Dean's Office Tampa US DEA" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-dea"><label for="p-us-dea" data-code="DEA"><span itemprop="department">Dean's Office</span> (USF Tampa) Undergraduate Studies</label></li>
+                        
+                        <li><input type="checkbox" name="Early Childhood Education SM EM EDU" value="Early Childhood Education SM EM EDU" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edu"><label for="p-em-edu" data-code="EDU"><span itemprop="department">Early Childhood Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Early Childhood Education Tampa ED EDU" value="Early Childhood Education Tampa ED EDU" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edu"><label for="p-ed-edu" data-code="EDU"><span itemprop="department">Early Childhood Education </span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Early Childhood Education Other HT EDU" value="Early Childhood Education Other HT EDU" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edu"><label for="p-ht-edu" data-code="EDU"><span itemprop="department">Early Childhood Education</span> (Other) Human and Social Services</label></li>
+                        
+                        
+                        <li><input type="checkbox" name="Economics SM AM ECN" value="Economics SM AM ECN" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-ecn"><label for="p-am-ecn" data-code="ECN"><span itemprop="department">Economics</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Economics Tampa AS ECN" value="Economics Tampa AS ECN" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-ecn"><label for="p-as-ecn" data-code="ECN"><span itemprop="department">Economics</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Economics SM BM ECN" value="Economics SM BM ECN" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-ecn"><label for="p-bm-ecn" data-code="ECN"><span itemprop="department">Economics </span>(USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Economics SP BP ECN" value="Economics SP BP ECN" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-ecn"><label for="p-bp-ecn" data-code="ECN"><span itemprop="department">Economics</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Economics Other TT ECN" value="Economics Other TT ECN" data-institution="(i-other)" class="c-tt i-other" id="p-tt-ecn"><label for="p-tt-ecn" data-code="ECN"><span itemprop="department">Economics</span> (Other) Technology and Innovation</label></li>
+                       
+                        <li><input type="checkbox" name="Education - General SP EP EDZ" value="Education - General SP EP EDZ" data-institution="(i-stpete)"  class="c-ep i-stpete" id="p-ep-edz"><label for="p-ep-edz" data-code="EDZ"><span itemprop="department">Education - General</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Educational Leadership SP EP ELS" value="Educational Leadership SP EP ELS" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-els"><label for="p-ep-els" data-code="ELS"><span itemprop="department">Educational Leadership</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Educational Leadership Tampa ED ELS" value="Educational Leadership Tampa ED ELS" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-els"><label for="p-ed-els" data-code="ELS"><span itemprop="department">Educational Leadership</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Educational Psychology Tampa ED EEP" value="Educational Psychology Tampa ED EEP" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-eep"><label for="p-ed-eep" data-code="EEP"><span itemprop="department">Educational Psychology</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Electrical Engineering Other EN EGE" value="Electrical Engineering Other EN EGE" data-institution="(i-other)" class="c-en i-other" id="p-en-ege"><label for="p-en-ege" data-code="EGE"><span itemprop="department">Electrical Engineering</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="Elementary Education SM EM EDE" value="Elementary Education SM EM EDE" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-ede"><label for="p-em-ede" data-code="EDE"><span itemprop="department">Elementary Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Elementary Education SP EP EDE" value="Elementary Education SP EP EDE" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-ede"><label for="p-ep-ede" data-code="EDE"><span itemprop="department">Elementary Education</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Elementary Education Tampa ED EDE" value="Elementary Education Tampa ED EDE" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-ede"><label for="p-ed-ede" data-code="EDE"><span itemprop="department">Elementary Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Elementary Education Other HT EDE" value="Elementary Education Other HT EDE" data-institution="(i-other)" class="c-ht i-other" id="p-ht-ede"><label for="p-ht-ede" data-code="EDE"><span itemprop="department">Elementary Education</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Engineering Computer Science Other EN ESB" value="Engineering Computer Science Other EN ESB" data-institution="(i-other)" class="c-en i-other" id="p-en-esb"><label for="p-en-esb" data-code="ESB"><span itemprop="department">Engineering Computer Science</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="English Other AT ENG"  value="English Other AT ENG" data-institution="(i-other)" class="c-at i-other" id="p-at-eng"><label for="p-at-eng" data-code="ENG"><span itemprop="department">English</span> (Other) Applied Arts and New Media</label></li>
+                        <li><input type="checkbox" name="English SM AM ENG"  value="English SM AM ENG" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-eng"><label for="p-am-eng" data-code="ENG"><span itemprop="department">English</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="English SP AP ENG"  value="English SP AP ENG" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-eng"><label for="p-ap-eng" data-code="ENG"><span itemprop="department">English</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="English Tampa AS ENG"  value="English Tampa AS ENG" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-eng"><label for="p-as-eng" data-code="ENG"><span itemprop="department">English</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="English Other HT ENG"  value="English Other HT ENG" data-institution="(i-other)" class="c-ht i-other" id="p-ht-eng"><label for="p-ht-eng" data-code="ENG"><span itemprop="department">English</span> (Other) Human and Social Sciences</label></li>
+
+                        <li><input type="checkbox" name="English Ed & Speech Comm. Ed SP EP EDT" value="English Ed & Speech Comm. Ed SP EP EDT" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edt"><label for="p-ep-edt" data-code="EDT"><span itemprop="department">English Ed & Speech Comm. Ed </span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="English Ed & Speech Comm. Ed Tampa EP EDT" value="English Ed & Speech Comm. Ed Tampa EP EDT" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edt"><label for="p-ed-edt" data-code="EDT"><span itemprop="department">English Ed & Speech Comm. Ed</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Entrepreneurship SP BP ENP" value="Entrepreneurship SP BP ENP" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-enp"><label for="p-bp-enp" data-code="ENP"><span itemprop="department">Entrepreneurship</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Environ. & Occupational Health Other PH EOH" value="Environ. & Occupational Health Other PH EOH" data-institution="(i-other)" class="c-ph i-other" id="p-ph-eoh"><label for="p-ph-eoh" data-code="EOH"><span itemprop="department">Environ. & Occupational Health</span>(Other) Public Health</label></li>
+                        
+                        <li><input type="checkbox" name="Environmental Science & Policy Program SM AM (ESP)" value="Environmental Science & Policy Program SM AM (ESP)" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-esp"><label for="p-am-esp" data-code="ESP"><span itemprop="department">Environmental Science & Policy Program</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Environmental Science & Policy Program SP AP (ESP)" value="Environmental Science & Policy Program SP AP (ESP)" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-esp"><label for="p-ap-esp" data-code="ESP"><span itemprop="department">Environmental Science & Policy Program </span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Environmental Science & Policy Program Tampa AS (ESP)" value="Environmental Science & Policy Program Tampa AS (ESP)" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-esp"><label for="p-as-esp" data-code="ESP"><span itemprop="department">Environmental Science & Policy Program</span>(USF Tampa)</label></li>
+
+                        <li><input type="checkbox" name="Epidemiology and Biostatistics OTHER PH EPB" value="Epidemiology and Biostatistics OTHER PH EPB" data-institution="(i-other)" class="c-ph i-other"  id="p-ph-epb"><label for="p-ph-epb" data-coce="EPB">Epidemiology and Biostatistics (Other) Public Health</label></li>
+
+                        <li><input type="checkbox" name="Exceptional Child Education SP AP EDS" value="Exceptional Child Education SP AP EDS" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-eds"><label for="p-ap-eds" data-code="EDS"><span itemprop="department">Exceptional Child Education</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Exceptional Child Education SM EM EDS" value="Exceptional Child Education SM EM EDS" data-institution="(i-sarasota)" class="c-em i-sarasota"  id="p-em-eds"><label for="p-em-eds" data-code="EDS"><span itemprop="department">Exceptional Child Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Exceptional Child Education SP EP EDS" value="Exceptional Child Education SP EP EDS" data-institution="(i-stpete)" class="c-ep i-stpete"  id="p-ep-eds"><label for="p-ep-eds" data-code="EDS"><span itemprop="department">Exceptional Child Education </span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Exceptional Child Education Tampa ED EDS" value="Exceptional Child Education Tampa ED EDS" data-institution="(i-tampa)" class="c-ed i-tampa"  id="p-ed-eds"><label for="p-ed-eds" data-code="EDS"><span itemprop="department">Exceptional Child Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Exceptional Child Education Other HT EDS" value="Exceptional Child Education Other HT EDS" data-institution="(i-other)" class="c-ht i-other"  id="p-ht-eds"><label for="p-ht-eds" data-code="EDS"><span itemprop="department">Exceptional Child Education </span>(Other) Human and Social Sciences</label></li>
+
+                        <li><input type="checkbox" name="Finance Tampa BA FIN" value="Finance Tampa BA FIN"  data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-fin"><label for="p-ba-fin" data-code="FIN"><span itemprop="department">Finance</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Finance SP BP FIN" value="Finance SP BP FIN" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-fin"><label for="p-bp-fin" data-code="FIN"><span itemprop="department">Finance</span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Finance SM BM FIN" value="Finance SM BM FIN" data-institution="(i-sarasota)" class="c-bm i-sarasota"  id="p-bm-fin"><label for="p-bm-fin" data-code="FIN"><span itemprop="department">Finance</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Finance Other TT FIN" value="Finance Other TT FIN" data-institution="(i-other)" class="c-tt i-other"  id="p-tt-fin"><label for="p-tt-fin" data-code="FIN"><span itemprop="department">Finance</span>(Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="FMHI Tampa ED FMH" value="FMHI Tampa ED FMH" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-fmh"><label for="p-ed-fmh" data-code="FMH"><span itemprop="department">FMHI</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="FMHI Other BC FMHI" value="FMHI Other BC FMHI" data-institution="(i-other)" class="c-bc i-other" id="p-bc-fmh"><label for="p-bc-fmh" data-code="FMH"><span itemprop="department">FMHI</span> (Other) Behavioral and Community Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Foreign Language Education Tampa ED EDX" value="Foreign Language Education Tampa ED EDX" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edx"><label for="p-ed-edx" data-code="EDX"><span itemprop="department">Foreign Language Education</span> (USF Tampan</label></li>
+                        <li><input type="checkbox" name="Foreign Language Education SP EP EDX" value="Foreign Language Education SP EP EDX" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edx"><label for="p-ep-edx" data-code="EDX"><span itemprop="department">Foreign Language Education</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Foreign Language Education SM EM EDX" value="Foreign Language Education SM EM EDX" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edx"><label for="p-em-edx" data-code="EDX"><span itemprop="department">Foreign Language Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Foreign Language Education Other HT EDX" value="Foreign Language Education Other HT EDX" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edx"><label for="p-ht-edx" data-code="EDX"><span itemprop="department">Foreign Language Education</span>(Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Foundations Tampa ED EDF" value="Foundations Tampa ED EDF" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-edf-ed"><label for="p-edf-ed" data-code="EDF"><span itemprop="department">Foundations</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Foundations SP EP EDF"  value="Foundations SP EP EDF" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edf"><label for="p-ep-edf" data-code="EDF"><span itemprop="department">Foundations</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Foundations SM EM EDF" value="Foundations SM EM EDF" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edf"><label for="p-em-edf" data-code="EDF"><span itemprop="department">Foundations</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Foundations Other BC EDF" value="Foundations Other BC EDF" data-institution="(i-other)" class="c-bc i-other" id="p-bc-edf"><label for="p-bc-edf" data-code="EDF"><span itemprop="department">Foundations</span>(Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Foundations Other HT EDF" value="Foundations Other HT EDF" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edf"><label for="p-ht-edf" data-code="EDF"><span itemprop="department">Foundations</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Geography Tampa AS GPY" value="Geography Tampa AS GPY" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-gpy"><label for="p-as-gpy" data-code="GPY"><span itemprop="department">Geography</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Geography SP AP GPY" value="Geography SP AP GPY" data-insitution="(i-stpete)" class="c-ap i-stpete" id="p-ap-gpy"><label for="p-ap-gpy" data-code="GPY"><span itemprop="department">Geography</span>(USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Geology Tampa AS GLY" value="Geology Tampa AS GLY" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-gly"><label for="p-as-gly" data-code="GLY"><span itemprop="department">Geology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Geology SP AP GLY" value="Geology SP AP GLY" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-gly"><label for="p-ap-gly" data-code="GLY"><span itemprop="department">Geology</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Geosciences, School of Tampa AS SGS" value="Geosciences, School of Tampa AS SGS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-sgs"><label for="p-as-sgs" data-code="SGS"><span itemprop="department">Geosciences, School of</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Global Health Other PH GLO" value="Global Health Other PH GLO" data-institution="(i-other)" class="c-ph i-other" id="p-ph-glo"><label for="p-ph-glo" data-code="GLO"><span itemprop="department">Global Health</span> (Other) Publich Health</label></li>
+                        
+                        <li><input type="checkbox" name="Government & Intl Affairs Tampa AS GIA" value="Government & Intl Affairs Tampa AS GIA" data-institute="(i-tampa)" class="c-as i-tampa" id="p-as-gia"><label for="p-as-gia" data-code="GIA"><span itemprop="department">Government & Intl Affairs</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Graduate School Department Other CS GRS" value="Graduate School Department Other CS GRS" data-institution="(i-other)" class="c-cs i-other" id="p-cs-grs"><label for="p-cs-grs" data-code="GRS"><span itemprop="department">Graduate School Department</span> (Other) Global Sustainability</label></li>
+                        <li><input type="checkbox" name="Graduate School Department Other GS GRS" value="Graduate School Department Other GS GRS" data-institution="(i-other)" class="c-gs i-other" id="p-gs-grs"><label for="p-gs-grs" data-code="GRS"><span itemprop="department">Graduate School Department</span> (Other) Graduate Schoool</label></li>
+                        
+                        <li><input type="checkbox" name="Health Policy and Management Other PH HPM" value="Health Policy and Management Other PH HPM" data-institute="(i-other)" class="c-ph i-other" id="p-ph-hpm"><label for="p-ph-hpm" data-code="HPM"><span itemprop="department">Health Policy and Management</span> (Other) Public Health</label></li>
+                        
+                        <li><input type="checkbox" name="Higher Ed/Community College Ed Tampa ED EDH"  value="Higher Ed/Community College Ed Tampa ED EDH" data-institute="(i-tampa)" class="c-ed i-tampa" id="p-ed-edh"><label for="p-ed-edh" data-code="EDH"><span itemprop="department">Higher Ed/Community College Ed</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="History Tampa AS HTY" value="History Tampa AS HTY" data-institution="(i-tampa)" class="c-as i-tampa"  id="p-as-hty"><label for="p-as-hty" data-code="HTY"><span itemprop="department">History</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="History SP AP HTY" value="History SP AP HTY" data-institution="(i-stpete)" class="c-ap i-stpete"  id="p-ap-hty"><label for="p-ap-hty" data-code="HTY"><span itemprop="department">History</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="History SM AM HTY"  value="History SM AM HTY" data-institution="(i-sarasota)" class="c-am i-sarasota"  id="p-am-hty"><label for="p-am-hty" data-code="HTY"><span itemprop="department">History</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Honors Program SP AP HON" value="Honors Program SP AP HON" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-hon"><label for="p-ap-hon" data-code="HON"><span itemprop="department">Honors Program</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Honors Program SM AM HON" value="Honors Program SM AM HON" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-hon"><label for="p-am-hon" data-code="HON"><span itemprop="department">Honors Program</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Honors Program Other HC HON" value="Honors Program Other HC HON"  data-institution="(i-other)" class="c-hc i-other" id="p-hc-hon"><label for="p-hc-hon" data-code="HON"><span itemprop="department">Honors Program</span> (Other) Honors College</label></li>
+                        
+                        <li><input type="checkbox" name="Hotel & Restaurant Management Leadership SM HM HRM" value="Hotel & Restaurant Management SM HM HRM" data-institution="(i-sarasota)"  class="c-hm i-sarasota" id="p-hm-hrm1"><label for="p-hm-hrm1" data-code="HRM"><span itemprop="department">Hotel & Restaurant Management</span> (USF Sarasota-Manatee) Hosp & Toursim Leadership</label></li>
+                        <li><input type="checkbox" name="Hotel & Restaurant Management SM HM HRM" value="Hotel & Restaurant Management SM HM HRM" data-institution="(i-sarasota)"  class="c-hm i-sarasota" id="p-hm-hrm2"><label for="p-hm-hrm2" data-code="HRM"><span itemprop="department">Hotel & Restaurant Management </span>(USF Sarasota-Manatee) Hotel & Rest Mgt</label></li>
+                        <li><input type="checkbox" name="Hotel & Restaurant Management Tech SM HM HRM" value="Hotel & Restaurant Management SM HM HRM" data-institution="(i-sarasota)"  class="c-hm i-sarasota" id="p-hm-hrm3"><label for="p-hm-hrm3" data-code="HRM"><span itemprop="department">Hotel & Restaurant Management</span> (USF Sarasota-Manatee) Hotel & Tech Leadership</label></li>
+                        <li><input type="checkbox" name="Hotel & Restaurant Management Tampa US HRM" value="Hotel & Restaurant Management Tampa US HRM" data-institution="(i-tampa)"  class="c-us i-tampa" id="p-us-hrm"><label for="p-us-hrm" data-code="HRM"><span itemprop="department">Hotel & Restaurant Management</span> (USF Tampa) Undergraduate Studies</label></li>
+                        
+                        
+                        <li><input type="checkbox" name="Humanities & Cultural Studies SM AM (HCS)" value="Humanities & Cultural Studies SM AM (HCS)" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-hcs"><label for="p-am-hcs" data-code="HCS"><span itemprop="department">Humanities & Cultural Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Humanities & Cultural Studies Tampa AS (HCS)" value="Humanities & Cultural Studies Tampa AM (HCS)" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-hcs"><label for="p-as-hcs" data-code="HCS"><span itemprop="department">Humanities & Cultural Studies </span>(USF Tampa) Arts & Humanities</label></li>
+                        
+                        <li><input type="checkbox" name="Humanities Tampa AS HUM" value="Humanities Tampa AS HUM" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-hum"><label for="p-as-hum" data-code="HUM"><span itemprop="department">Humanities</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Humanities SP AP HUM" value="Humanities SP AP HUM" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-hum"><label for="p-ap-hum" data-code="HUM"><span itemprop="department">Humanities</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Humanities SM AM HUM" value="Humanities SM AM HUM" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-hum"><label for="p-am-hum" data-code="HUM"><span itemprop="department">Humanities</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Industrial Systems Engineering Other EN EGS" value="Industrial Systems Engineering Other EN EGS" data-institution="(i-other)" class="c-en i-other" id="p-en-egs"><label for="p-en-egs" data-code="EGS"><span itemprop="department">Industrial Systems</span> (Other) Engineering</label></li>
+                        <li><input type="checkbox" name="Industrial Systems Public Health Other PH EGS" value="Industrial Systems Engineering Other PH EGS" data-institution="(i-other)" class="c-en i-other" id="p-ph-egs"><label for="p-ph-egs" data-code="EGS"><span itemprop="department">Industrial Systems</span> (Other) Public Health</label></li>
+                        <li><input type="checkbox" name="Industrial Systems Technology Other TT EGS" value="Industrial Systems Engineering Other TT EGS" data-institution="(i-other)" class="c-tt i-other" id="p-tt-egs"><label for="p-tt-egs" data-code="EGS"><span itemprop="department">Industrial Systems</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="Information Sys & Decision Sci SM BM QMB" value="Information Sys & Decision Sci SM BM QMB" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-qmb"><label for="p-bm-qmb" data-code="QMB"><span itemprop="department">Information Sys & Decision Sci</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Information Sys & Decision Sci SM BP QMB" value="Information Sys & Decision Sci SM BP QMB" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-qmb"><label for="p-bp-qmb" data-code="QMB"><span itemprop="department">Information Sys & Decision Sci</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Information Sys & Decision Sci Tampa BA QMB" value="Information Sys & Decision Sci Tampa BA QMB" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-qmb"><label for="p-ba-qmb" data-code="QMB"><span itemprop="department">Information Sys & Decision Sci</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Information Sys & Decision Sci Other TT QMB" value="Information Sys & Decision Sci Other TT QMB" data-institution="(i-other)" class="c-tt i-other" id="p-tt-qmb"><label for="p-tt-qmb" data-code="QMB"><span itemprop="department">Information Sys & Decision Sci</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="Information Technology SM AM EIT" value="Information Technology SM AM EIT" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-eit"><label for="p-am-eit" data-code="EIT"><span itemprop="department">Information Technology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Information Technology SM BM EIT" value="Information Technology SM BM EIT" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-eit"><label for="p-bm-eit" data-code="EIT"><span itemprop="department">Information Technology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Information Technology Other EN EIT" value="Information Technology Other EN EIT" data-institution="(i-other)" class="c-en i-other" id="p-en-eit"><label for="p-en-eit" data-code="EIT"><span itemprop="department">Information Technology</span> (Other) Engineering</label></li>
+                        <li><input type="checkbox" name="Information Technology SM HM EIT" value="Information Technology SM HM EIT" data-institution="(i-sarasota)" class="c-hm i-sarasota" id="p-hm-eit"><label for="p-hm-eit" data-code="EIT"><span itemprop="department">Information Technology</span> (USF Sarasota-Manatee) Hotel & Tech Leadership</label></li>
+                        <li><input type="checkbox" name="Information Technology TT AM EIT" value="Information Technology TT AM EIT" data-institution="(i-sarasota)" class="c-tt i-sarasota" id="p-tt-eit"><label for="p-tt-eit" data-code="EIT"><span itemprop="department">Information Technology</span> (Other) Technology and Innovation</label></li>
+                        <li><input type="checkbox" name="Information Technology Tampa US EIT" value="Information Technology Tampa US EIT" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-eit"><label for="p-us-eit" data-code="EIT"><span itemprop="department">Information Technology </span>(Other) Undergraduate Studies</label></li>
+                         
+                        <li><input type="checkbox" name="Instructional Technology SM EM EDK" value="Instructional Technology SM EM EDK" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edk"><label for="p-em-edk" data-code="EDK"><span itemprop="department">Instructional Technology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Instructional Technology SM EP EDK" value="Instructional Technology SM EP EDK" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edk"><label for="p-ep-edk" data-code="EDK"><span itemprop="department">Instructional Technology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Instructional Technology Tampa ED EDK" value="Instructional Technology Tampa ED EDK" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edk"><label for="p-ed-edk" data-code="EDK"><span itemprop="department">Instructional Technology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Instructional Technology Other HT EDK" value="Instructional Technology Other HT EDK" data-institution="(i-other)" class="c-ht i-other" id="p-ht-edk"><label for="p-ht-edk" data-code="EDK"><span itemprop="department">Instructional Technology </span>(Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Interdisciplinary Arts & Scien Tampa AS (IAS)" value="Interdisciplinary Arts & Scien Tampa AS (IAS)" data-institution="(i-tampa)" class="c-as i-tampa"  id="p-as-ias"><label for="p-as-ias" data-code="IAS"><span itemprop="department">Interdisciplinary Arts & Scien</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Interdisciplinary Social Sci SM AM ISS" value="Interdisciplinary Social Sci SM AM ISS" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-iss"><label for="p-am-iss" data-code="ISS"><span itemprop="department">Interdisciplinary Social Sci</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Interdisciplinary Social Sci SP AP ISS" value="Interdisciplinary Social Sci SP AP ISS" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-iss"><label for="p-ap-iss" data-code="ISS"><span itemprop="department">Interdisciplinary Social Sci</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Interdisciplinary Social Sci Tampa AS ISS" value="Interdisciplinary Social Sci Tampa AS ISS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-iss"><label for="p-as-iss" data-code="ISS"><span itemprop="department">Interdisciplinary Social Sci</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Interdisciplinary Social Sci Other AS ISS" value="Interdisciplinary Social Sci Other AS ISS" data-institution="(i-other)" class="c-ht i-other" id="p-ht-iss"><label for="p-ht-iss" data-code="ISS"><span itemprop="department">Interdisciplinary Social Sci</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Interdisciplinary Studies Other CS IDS" value="Interdisciplinary Studies Other CS IDS" data-institution="(i-other)"  class="c-cs i-other" id="p-cs-ids"><label for="p-cs-ids" data-code="IDS"><span itemprop="department">Interdisciplinary Studies</span> (Other) Global Sustainability</label></li>
+                        
+                        <li><input type="checkbox" name="International Studies SM AM INT" value="International Studies SM AM INT"  data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-int" data-code="INT"><label for="p-am-int"><span itemprop="department">International Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="International Studies Tampa AS INT" value="International Studies Tampa AS INT"  data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-int"><label for="p-as-int" data-code="INT"><span itemprop="department">International Studies</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="International Studies Other HT INT" value="International Studies Other HT INT"  data-institution="(i-other)" class="c-ht i-other" id="p-ht-int"><label for="p-ht-int" data-code="INT"><span itemprop="department">International Studies</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Latin Am Studies/Caribbean Ctr Tampa AS LAS" value="Latin Am Studies/Caribbean Ctr Tampa AS LAS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-las"><label for="p-as-las" data-code="LAS"><span itemprop="department">Latin Am Studies/Caribbean Ctr </span>(USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Leadership Studies SM AM LDR" value="Leadership Studies SM AM LDR"  data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-ldr"><label for="p-am-ldr" data-code="LDR"><span itemprop="department">Leadership Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Leadership Studies SP EP LDR" value="Leadership Studies SP EP LDR"  data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-ldr"><label for="p-ep-ldr" data-code="LDR"><span itemprop="department">Leadership Studies</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Leadership Studies Tampa US LDR" value="Leadership Studies Tampa US LDR"  data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-ldr"><label for="p-us-ldr" data-code="LDR"><span itemprop="department">Leadership Studies</span> (USF Tampa) Undergraduate Studies</label></li>
+                        
+                        <li><input type="checkbox" name="Library and Information Sci. Tampa AS LIS" value="Library and Information Sci. Tampa AS LIS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-lis"><label for="p-as-lis" data-code="LIS"><span itemprop="department">Library and Information Sci.</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Library and Information Sci. SP AP LIS" value="Library and Information Sci. SP AP LIS"  data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-lis"><label for="p-ap-lis" data-code="LIS"><span itemprop="department">Library and Information Sci.</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Management and Organization Other BC MAN" value="Management and Organization Other BC MAN" data-institution="(i-other)" class="c-bc i-other" id="p-bc-man"><label for="p-bc-man" data-code="MAN"><span itemprop="department">Management and Organization</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Management and Organization SM BM MAN" value="Management and Organization SM BM MAN" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-man"><label for="p-bm-man" data-code="MAN"><span itemprop="department">Management and Organization</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Management and Organization SP BP MAN" value="Management and Organization SP BP MAN" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-man"><label for="p-bp-man" data-code="MAN"><span itemprop="department">Management and Organization</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Management and Organization Tampa BA MAN" value="Management and Organization Tampa BA MAN" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-man"><label for="p-ba-man" data-code="MAN"><span itemprop="department">Management and Organization</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Management and Organization Other TT MAN" value="Management and Organization Other TT MAN" data-institution="(i-other)" class="c-tt i-other" id="p-tt-man"><label for="p-tt-man" data-code="MAN"><span itemprop="department">Management and Organization</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="Marine Science SM AM MSC" value="Marine Science SM AM MSC" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-msc"><label for="p-am-msc" data-code="MSC"><span itemprop="department">Marine Science</span> (USF Sarasota-Manatee</label></li>
+                        <li><input type="checkbox" name="Marine Science Other MS MSC" value="Marine Science Other MS MSC" data-institution="(i-other)" class="c-ms i-other" id="p-ms-msc"><label for="p-ms-msc" data-code="MSC"><span itemprop="department">Marine Science</span> (Other) Marine Science</label></li>
+
+                        <li><input type="checkbox" name="Marketing SM BM MKT" value="Marketing SM BM MKT" data-institution="(i-sarasota)" class="c-bm i-sarasota" id="p-bm-mkt"><label for="p-bm-mkt" data-code="MKT"><span itemprop="department">Marketing</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Marketing SP BP MKT" value="Marketing SP BP MKT" data-institution="(i-stpete)" class="c-bp i-stpete" id="p-bp-mkt"><label for="p-bp-mkt" data-code="MKT"><span itemprop="department">Marketing</span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Marketing Tampa BA MKT" value="Marketing Tampa BA MKT" data-institution="(i-tampa)" class="c-ba i-tampa" id="p-ba-mkt"><label for="p-ba-mkt" data-code="MKT"><span itemprop="department">Marketing</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Marketing Other TT MKT" value="Marketing Other TT MKT" data-institution="(i-other)" class="c-tt i-other" id="p-tt-mkt"><label for="p-tt-mkt" data-code="MKT"><span itemprop="department">Marketing</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="Mass Communication SM AM COM" value="Mass Communication SM AM COM" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-com"><label for="p-am-com" data-code="COM"><span itemprop="department">Mass Communication</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Mass Communication SP AP COM" value="Mass Communication SP AP COM" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-com"><label for="p-ap-com" data-code="COM"><span itemprop="department">Mass Communication</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Mass Communication Tampa AS COM" value="Mass Communication Tampa AS COM" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-com"><label for="p-as-com" data-code="COM"><span itemprop="department">Mass Communication</span> (USF Tampa)</label></li>
+
+                        <li><input type="checkbox" name="Mathematics and Statistics SM AM MTH" value="Mathematics and Statistics SM AM MTH" data-institution="(i-sarasota)" class="c-am i-sarasota"  id="p-am-mth" data-code="MTH"><label for="p-am-mth"><span itemprop="department">Mathematics and Statistics</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Mathematics and Statistics SP AP MTH" value="Mathematics and Statistics SP AP MTH" data-institution="(i-stpete)" class="c-ap i-stpete"  id="p-ap-mth"><label for="p-ap-mth" data-code="MTH"><span itemprop="department">Mathematics and Statistics</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Mathematics and Statistics Tampa AS MTH" value="Mathematics and Statistics Tampa AS MTH" data-institution="(i-tampa)" class="c-as i-tampa"  id="p-as-mth"><label for="p-as-mth" data-code="MTH"><span itemprop="department">Mathematics and Statistics</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Mathematics and Statistics Other HT MTH" value="Mathematics and Statistics Other HT MTH" data-institution="(i-other)" class="c-ht i-other"  id="p-ht-mth"><label for="p-ht-mth" data-code="MTH"><span itemprop="department">Mathematics and Statistics</span> (Other) Human and Social Sciences</label></li>
+
+                        <li><input type="checkbox" name="Mathematics Education SM EM EDO" value="Mathematics Education SM EM EDO"  data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edo"><label for="p-em-edo" data-code="EDO"><span itemprop="department"> Mathematics Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Mathematics Education SP EP EDO" value="Mathematics Education SP EP EDO"  data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edo"><label for="p-ep-edo" data-code="EDO"><span itemprop="department">Mathematics Education</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Mathematics Education Tampa ED EDO" value="Mathematics Education Tampa ED EDO"  data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edo"><label for="p-ed-edo" data-code="EDO"><span itemprop="department">Mathematics Education</span>(USF Tampa)</label></li>
+  
+                        <li><input type="checkbox" name="Measurement-Research SM EM EDQ" value="Measurement-Research SM EM EDQ" data-institution="(i-sarasota)" class="c-em i-sarasota" id="p-em-edq"><label for="p-em-edq" data-code="EDQ"><span itemprop="department">Measurement-Research</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Measurement-Research SP EP EDQ" value="Measurement-Research SP EP EDQ" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edq"><label for="p-ep-edq" data-code="EDQ"><span itemprop="department">Measurement-Research</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Measurement-Research Tampa ED EDQ" value="Measurement-Research Tampa ED EDQ" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edq"><label for="p-ed-edq" data-code="EDQ"><span itemprop="department">Measurement-Research</span> (USF Tampa)</label></li>
+
+                        <li><input type="checkbox" name="Mechanical Engineering Other EN EGR" value="Mechanical Engineering Other EN EGR" data-institution="(i-other)" class="c-en i-other" id="p-en-egr"><label for="p-en-egr" data-code="EGR"><span itemprop="department">Mechanical Engineering</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="Medical Sciences Other MD MED" value="Medical Sciences Other MD MED" data-institution="(i-other)" class="c-md i-other" id="p-md-med"><label for="p-md-med" data-code="MED"><span itemprop="department">Medical Sciences</span> (Other) (MD) Medicine</label></li>
+                        <li><input type="checkbox" name="Medical Sciences Other MD MSG" value="Medical Sciences Other MD MSG" data-institution="(i-other)" class="c-md i-other" id="p-md-msg"><label for="p-md-msg" data-code="MSG"><span itemprop="department">Medical Sciences</span> (Other) (MD) Medicine</label></li>
+                        
+                        <li><input type="checkbox" name="Mental Health Law & Policy Other BC MHL" value="Mental Health Law & Policy Other BC MHL" data-institution="(i-other)" class="c-bc i-other" id="p-bc-mhl"><label for="p-bc-mhl" data-code="MHL"><span itemprop="department">Mental Health Law & Policy</span> (Other) Behavioral and Community Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Music SM AM MUS" value="Music SM AM MUS" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-mus" data-code="MUS"><label for="p-am-mus"><span itemprop="department">Music</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Music Tampa AS MUS" value="Music SP AP MUS" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-mus"><label for="p-ap-mus" data-code="MUS"><span itemprop="department">Music</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Music Tampa AS MUS" value="Music Tampa AS MUS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-mus"><label for="p-as-mus" data-code="MUS"><span itemprop="department">Music</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Music Other FA MUS" value="Music Other FA MUS" data-institution="(i-tampa)" class="c-fa i-tampa" id="p-fa-mus"><label for="p-fa-mus" data-code="MUS"><span itemprop="department">Music</span> (Other) College of the Arts</label></li>
+
+                        <li><input type="checkbox" name="Music Education Tampa ED EDM" value="Music Education Tampa ED EDM" data-institution="(i-tampa)" class="c-ed i-tampa"  id="p-ed-edm"><label for="p-ed-edm" data-code="EDM"><span itemprop="department">Music Education</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Naval (ROTC) Tampa US NVY" value="Naval (ROTC) Tampa US NVY" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-nvy"><label for="p-us-nvy" data-code="NVY"><span itemprop="department">Naval (ROTC)</span> (USF Tampa) Undergraduate Studies</label></li>
+                       
+                        <li><input type="checkbox" name="Nursing (NUR) Other NR NUR" value="Nursing (NUR) Other NR NUR" data-institution="(i-other)" class="c-nr i-other" id="p-nr-nur"><label for="p-nr-nur" data-code="NUR"><span itemprop="department">Nursing </span>(Other) Nursing</label></li>
+                        
+                        <li><input type="checkbox" name="Philosophy SM AM PHI" value="Philosophy SM AM PHI" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-phi"><label for="p-am-phi" data-code="PHI"><span itemprop="department">Philosophy</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Philosophy SP AP PHI" value="Philosophy SP AP PHI" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-phi"><label for="p-ap-phi" data-code="PHI"><span itemprop="department">Philosophy</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Philosophy Tampa AS PHI" value="Philosophy Tampa AS PHI" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-phi"><label for="p-as-phi" data-code="PHI"><span itemprop="department">Philosophy</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Physical Education (Elective) SM PEB" value="Physical Education (Elective) SM PEB" data-institution="(i-sarasota)"  class="c-em i-sarasota" id="p-em-peb"><label for="p-em-peb" data-code="PEB"><span itemprop="department">Physical Education</span> (Elective) (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Physical Education (Elective) Tampa ED EDJ" value="Physical Education (Elective) Tampa ED EDJ" data-institution="(i-tampa)"  class="c-ed i-tampa" id="p-ed-edj"><label for="p-ed-edj" data-code="EDJ"><span itemprop="department">Physical Education</span> (Elective) (USF Tampa)</label></li>
+
+                        <li><input type="checkbox" name="Physical Education (Elective) SM EM EDJ" value="Physical Education (Elective) SM EM EDJ" data-institution="(i-tampa)"  class="c-em i-sarasota" id="p-em-edj"><label for="p-em-edj" data-code="EDJ"><span itemprop="department">Physical Education Elective</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Physical Education for Teacher SM EM EDP" value="Physical Education for Teacher SM EM EDP" data-institute="(i-sarasota)" class="c-em i-sarasota"  id="p-em-edp"><label for="p-em-edp" data-code="EDP"><span itemprop="department">Physical Education for Teacher</span>(USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Physical Education for Teacher Tampa ED EDP" value="Physical Education for Teacher Tampa ED EDP" data-institute="(i-tampa)" class="c-ed i-tampa"  id="p-ed-edp"><label for="p-ed-edp" data-code="EDP"><span itemprop="department">Physical Education for Teacher</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Physical Education for Teacher Other HT EDP" value="Physical Education for Teacher Other HT EDP" data-institute="(i-other)" class="c-ht i-other"  id="p-ht-edp"><label for="p-ht-edp" data-code="EDP"><span itemprop="department">Physical Education for Teacher</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Physical Therapy Other MD PHT" value="Physical Therapy Other MD PHT" data-institution="(i-other)" class="c-md i-other"  id="p-md-pht"><label for="p-md-pht" data-code="PHT"><span itemprop="department">Physical Therapy</span> (Other) (MD) Medicine</label></li>
+                        
+                        <li><input type="checkbox" name="Physics SM AM PHY" value="Physics SM AM PHY" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-phy"><label for="p-am-phy" data-code="PHY"><span itemprop="department">Physics</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Physics SP AP PHY" value="Physics SP AP PHY" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-phy"><label for="p-ap-phy" data-code="PHY"><span itemprop="department">Physics</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Physics Tampa AS PHY" value="Physics Tampa AS PHY" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-phy"><label for="p-as-phy" data-code="PHY"><span itemprop="department">Physics</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Political Science SM AM POL" value="Political Science SM AM POL" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-pol"><label for="p-am-pol" data-code="POL"><span itemprop="department">Political Science</span>(USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Political Science SPAP POL" value="Political Science SP AP POL" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-pol"><label for="p-ap-pol" data-code="POL"><span itemprop="department">Political Science</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Political Science Tampa AS POL" value="Political Science Tampa AS POL" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-pol"><label for="p-as-pol" data-code="POL"><span itemprop="department">Political Science</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Political Science SP SP POL" value="Political Science SP SP POL" data-institution="(i-stpete)" class="c-sp i-stpete" id="p-sp-pol"><label for="p-sp-pol" data-code="POL"><span itemprop="department">Political Science</span> (USF St. Petersburg) Undergraduate Studies</label></li>
+
+                        <li><input type="checkbox" name="Psychology SM AM PSY" value="Psychology SM AM PSY" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-psy"><label for="p-am-psy" data-code="PSY"><span itemprop="department">Psychology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Psychology SP AP PSY" value="Psychology SP AP PSY" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-psy"><label for="p-ap-psy" data-code="PSY"><span itemprop="department">Psychology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Psychology Tampa AS PSY" value="Psychology Tampa AS PSY" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-psy"><label for="p-as-psy" data-code="PSY"><span itemprop="department">Psychology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Psychology Other HT PSY" value="Psychology Other HT PSY" data-institution="(i-other)" class="c-ht i-other" id="p-ht-psy"><label for="p-ht-psy" data-code="PSY"><span itemprop="department">Psychology</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Public Administration SM SM PAD" value="Public Administration SM AM PAD"  data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-pad"><label for="p-am-pad" data-code="PAD"><span itemprop="department">Public Administration</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Public Administration Tampa AS PAD" value="Public Administration Tampa AS PAD"  data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-pad" data-code="PAD"><label for="p-as-pad"><span itemprop="department">Public Administration </span>(USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Public Health Other BC PHC" value="Public Health Other BC PHC" data-institution="(i-other)" class="c-bc i-other" id="p-bc-phc"><label for="p-bc-phc" data-code="PHC"><span itemprop="department">Public Health</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Public Health Other FM PHC" value="Public Health Other FM PHC" data-institution="(i-other)" class="c-fm i-other" id="p-fm-phc"><label for="p-fm-phc" data-code="PHC"><span itemprop="department">Public Health</span> (Other) FMHI: de la Parte Florida Mental Health Institute </label></li>
+                        <li><input type="checkbox" name="Public Health Other PH PHC" value="Public Health Other PH PHC" data-institution="(i-other)" class="c-ph i-other" id="p-ph-phc"><label for="p-ph-phc" data-code="PHC"><span itemprop="department">Public Health</span> (Other) Public Health</label></li>
+                        
+                        <li><input type="checkbox" name="Reading & Learning Strategies SP AP RLS" value="Reading & Learning Strategies SP AP RLS" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-rls"><label for="p-ap-rls" data-code="RLS">Reading & Learning Strategies (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Reading & Learning Strategies Tampa US RLS" value="Reading & Learning Strategies Tampa US RLS" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-rls"><label for="p-us-rls" data-code="RLS">Reading & Learning Strategies (USF Tampa) Undergraduate Studies</label></li>
+                        
+                        <li><input type="checkbox" name="Rehab & Mental Hlth Counseling SM AM REH" value="Rehab & Mental Hlth Counseling SM AM REH" data-institution="(i-sarasota)" class="c-am i-sarasota"  id="p-am-reh" data-code="REH"><label for="p-am-reh"><span itemprop="department">Rehab & Mental Hlth Counseling</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Rehab & Mental Hlth Counseling Other BC REH" value="Rehab & Mental Hlth Counseling Other BC REH" data-institution="(i-other)" class="c-bc i-other"  id="p-bc-reh"><label for="p-bc-reh" data-code="REH"><span itemprop="department">Rehab & Mental Hlth Counseling</span>(Other) Behavioral and Community Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Religious Studies SM AM REL" value="Religious Studies SM AM REL" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-rel"><label for="p-am-rel" data-code="REL"><span itemprop="department">Religious Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Religious Studies SP AP REL" value="Religious Studies SP AP REL" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-rel"><label for="p-ap-rel" data-code="REL"><span itemprop="department">Religious Studies</span>(USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Religious Studies Tampa AS REL" value="Religious Studies Tampa AS REL" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-rel"><label for="p-as-rel" data-code="REL"><span itemprop="department">Religious Studies</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Religious Studies Other HT REL" value="Religious Studies Other HT REL" data-institution="(i-other)" class="c-ht i-other" id="p-ht-rel"><label for="p-ht-rel" data-code="REL"><span itemprop="department">Religious Studies</span> (Other) Human and Social Sciences</label></li>
+
+                        <li><input type="checkbox" name="School of Aging Studies SM AM GEY" value="School of Aging Studies SM AM GEY" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-gey"><label for="p-am-gey" data-code="GEY"><span itemprop="department">School of Aging Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="School of Aging Studies Other BC GEY" value="School of Aging Studies Other BC GEY" data-institution="(i-other)" class="c-bc i-other" id="p-bc-gey"><label for="p-bc-gey" data-code="GEY"><span itemprop="department">School of Aging Studies</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="School of Aging Studies Other HT GEY" value="School of Aging Studies Other HT GEY" data-institution="(i-other)" class="c-ht i-other" id="p-ht-gey"><label for="p-ht-gey" data-code="GEY"><span itemprop="department">School of Aging Studies</span> (Other) Human and Social Sciences</label></li>
+                        <li><input type="checkbox" name="School of Aging Studies Other TT GEY" value="School of Aging Studies Other TT GEY" data-institution="(i-other)" class="c-tt i-other" id="p-tt-gey"><label for="p-tt-gey" data-code="GEY"><span itemprop="department">School of Aging Studies</span> (Other) Technology and Innovation</label></li>
+                        
+                        <li><input type="checkbox" name="School of Information Tampa AS LIS" value="School of Information Tampa AS LIS" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-lis2"><label for="p-as-lis2" data-code="LIS"><span itemprop="department">School of Information</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="School of Public Affairs Tampa AS SPF" value="School of Public Affairs Tampa AS SPF" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-spf"><label for="p-as-spf" data-code="SPF"><span itemprop="department">School of Public Affairs </span>(USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="School Psychology Tampa ED EPS" value="School Psychology Tampa ED EPS" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-eps"><label for="p-ed-eps" data-code="EPS"><span itemprop="department">School Psychology</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Science Education SM EM EDN" value="Science Education SM EM EDN" data-institution="(i-sarasota)" class="c-em i-sarasota"  id="p-em-edn"><label for="p-em-edn" data-code="EDN"><span itemprop="department">Science Education</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Science Education Tampa ED EDN" value="Science Education Tampa ED EDN" data-institution="(i-tampa)" class="c-ed i-tampa"  id="p-ed-edn"><label for="p-ed-edn" data-code="EDN"><span itemprop="department">Science Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Science Education Other EN EDN" value="Science Education Other EN EDN" data-institution="(i-other)" class="c-en i-other"  id="p-en-edn"><label for="p-en-edn" data-code="EDN"><span itemprop="department">Science Education</span> (Other) Engineering</label></li>
+                        
+                        <li><input type="checkbox" name="Secondary Education, General Tampa ED EDI" value="Secondary Education, General Tampa ED EDI" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-edi"><label for="p-ed-edi" data-code="EDI"><span itemprop="department">Secondary Education, General</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Secondary Education, General SP EP EDI"  value="Secondary Education, General SP EP EDI" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-edi"><label for="p-ep-edi" data-code="EDI"><span itemprop="department">Secondary Education, General</span> (USF St. Petersburg)</label></li>
+                        
+                        <li><input type="checkbox" name="Social Foundations Tampa ED ESF" value="Social Foundations Tampa ED ESF" data-institution="(i-tampa)" class="c-ed i-tampa" id="p-ed-esf"><label for="p-ed-esf" data-code="ESF"><span itemprop="department">Social Foundations</span> (USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Social Science Education Tampa ED EDW" value="Social Science Education Tampa ED EDW" data-institution="(i-tampa)" class="c-ed i-tampa"  id="p-ed-edw"><label for="p-ed-edw" data-code="EDW"><span itemprop="department">Social Science Education</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox"  name="Social Science Education SM EM EDW" value="Social Science Education SM EM (EDW)" data-institution="(i-sarasota)" class="c-em i-sarasota"  id="p-em-edw"><label for="p-em-edw" data-code="EDW"><span itemprop="department">Social Science Education</span> (USF Sarasota-Manatee)</label></li>
+                        
+                        <li><input type="checkbox" name="Social Work SM AM SOK" value="Social Work SM AM SOK" data-institution="(i-sarasota)"  class="c-am i-sarasota" id="p-am-sok"><label for="p-am-sok" data-code="SOK"><span itemprop="department">Social Work</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Social Work SP AP SOK" value="Social Work SP AP SOK" data-institution="(i-stpete)"  class="c-ap i-stpete" id="p-ap-sok"><label for="p-ap-sok" data-code="SOK"><span itemprop="department">Social Work</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Social Work Other BC SOK" value="Social Work Other BC SOK" data-institution="(i-other)"  class="c-bc i-other" id="p-bc-sok"><label for="p-bc-sok" data-code="SOK"><span itemprop="department">Social Work</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Social Work Other HT SOK" value="Social Work Other HT SOK" data-institution="(i-other)"  class="c-ht i-other" id="p-ht-sok"><label for="p-ht-sok" data-code="SOK"><span itemprop="department">Social Work</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Sociology SM AM SOC" value="Sociology SM AM SOC" data-institution="(i-sarasota)" class="c-am i-sarasota"  id="p-am-soc"><label for="p-am-soc" data-code="SOC"><span itemprop="department">Sociology</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Sociology SP AP SOC" value="Sociology SP AP SOC" data-institution="(i-stpete)" class="c-ap i-stpete"  id="p-ap-soc"><label for="p-ap-soc" data-code="SOC"><span itemprop="department">Sociology</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Sociology Tampa AS SOC" value="Sociology Tampa AS SOC" data-institution="(i-tampa)" class="c-as i-tampa"  id="p-as-soc"><label for="p-as-soc" data-code="SOC"><span itemprop="department">Sociology</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Sociology Other HT SOC" value="Sociology Other HT SOC" data-institution="(i-other)" class="c-ht i-other"  id="p-ht-soc"><label for="p-ht-soc" data-code="SOC"><span itemprop="department">Sociology</span> (Other) Human and Social Sciences</label></li>
+                        
+                        <li><input type="checkbox" name="Student Affairs - General Tampa ED SAG" value="Student Affairs - General Tampa ED SAG" data-institution="(i-tampa)" class="c-ed i-tampa"  id="p-ed-sag"><label for="p-ed-sag" data-code="SAG"><span itemprop="department">Student Affairs - General </span>(USF Tampa)</label></li>
+                        
+                        <li><input type="checkbox" name="Student Leadership SM AM STL" value="Student Leadership SM AM STL" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-stl"><label for="p-am-stl" data-code="STL"><span itemprop="department">Student Leadership </span>(USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Student Leadership SP AP STL" value="Student Leadership SP AP STL" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-stl"><label for="p-ap-stl" data-code="STL"><span itemprop="department">Student Leadership</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Student Leadership SP EP STL" value="Student Leadership SP EP STL" data-institution="(i-stpete)" class="c-ep i-stpete" id="p-ep-stl"><label for="p-ep-stl" data-code="STL"><span itemprop="department">Student Leadership</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Student Leadership Other TT STL" value="Student Leadership Other TT STL" data-institution="(i-other)" class="c-tt i-other" id="p-tt-stl"><label for="p-tt-stl" data-code="STL"><span itemprop="department">Student Leadership</span>(Other) Technology and Innovation</label></li>
+                        <li><input type="checkbox" name="Student Leadership Tampa US STL" value="Student Leadership Tampa US STL" data-institution="(i-tampa)" class="c-us i-tampa" id="p-us-stl"><label for="p-us-stl" data-code="STL"><span itemprop="department">Student Leadership</span>(USF Tampa) Undergraduate Studies</label></li>
+  
+                        <li><input type="checkbox" name="Theater & Dance SM AM TAR" value="Theater & Dance SM AM TAR" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-tar"><label for="p-am-tar" data-code="TAR"><span itemprop="department">Theater & Dance</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Theater & Dance Tampa AS TAR" value="Theater & Dance Tampa AS TAR" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-tar"><label for="p-as-tar" data-code="TAR"><span itemprop="department">Theater & Dance</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Theater & Dance Other FA TAR" value="Theater & Dance Other FA TAR" data-institution="(i-other)" class="c-fa i-other" id="p-fa-tar"><label for="p-fa-tar" data-code="TAR"><span itemprop="department">Theater & Dance</span> (Other) College of the Arts</label></li>
+                        
+                        <li><input type="checkbox" name="Women's and Gender Studies SM AM WST" value="Women's and Gender Studies SM AM WST" data-institution="(i-tampa)" class="c-am i-sarasota" id="p-am-wst"><label for="p-am-wst" data-code="WST"><span itemprop="department">Women's and Gender Studies</span> (USF Sarasota-Manatee)</label></li>
+                        <li><input type="checkbox" name="Women's and Gender Studies SP AP WST" value="Women's and Gender Studies SP AP WST" data-institution="(i-tampa)" class="c-ap i-tampa" id="p-ap-wst"><label for="p-ap-wst" data-code="WST"><span itemprop="department">Women's and Gender Studies</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="Women's and Gender Studies Tampa AS WST" value="Women's and Gender Studies Tampa AS WST" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-wst"><label for="p-as-wst" data-code="WST"><span itemprop="department">Women's and Gender Studies</span>(USF Tampa)</label></li>
+                        <li><input type="checkbox" name="Women's and Gender Studies Other BC WST" value="Women's and Gender Studies Other BC WST" data-institution="(i-tampa)" class="c-bc i-tampa" id="p-bc-wst"><label for="p-bc-wst" data-code="WST"><span itemprop="department">Women's and Gender Studies</span> (Other) Behavioral and Community Sciences</label></li>
+                        <li><input type="checkbox" name="Women's and Gender Studies Other HT WST" value="Women's and Gender Studies Other HT WST" data-institution="(i-other)" class="c-ht i-other" id="p-ht-wst"><label for="p-ht-wst" data-code="WST"><span itemprop="department">Women's and Gender Studies</span> (Other) Human and Social Sciences</label></li>
+
+                        <li><input type="checkbox" name="World Languages Tampa AS WLE"  value="World Languages Tampa AS WLE" data-institution="(i-tampa)" class="c-as i-tampa" id="p-as-wle"><label for="p-as-wle" data-code="WLE"><span itemprop="department">World Languages</span> (USF Tampa)</label></li>
+                        <li><input type="checkbox" name="World Languages SP AP WLE"  value="World Languages SP AP WLE" data-institution="(i-stpete)" class="c-ap i-stpete" id="p-ap-wle"><label for="p-ap-wle" data-code="WLE"><span itemprop="department">World Languages</span> (USF St. Petersburg)</label></li>
+                        <li><input type="checkbox" name="World Languages SM AM WLE" value="World Languages SM AM WLE" data-institution="(i-sarasota)" class="c-am i-sarasota" id="p-am-wle"><label for="p-am-wle" data-code="WLE"><span itemprop="department">World Languages</span> (USF Sarasota-Manatee)</label></li>
+
+                    </ul>
+        </fieldset>
+
+    </section>
+
+
+
+            </div><!-- col-xs-12 -->
+        </div><!-- tab-filter-campus -->
+
+
+  <div class="row">
+    <div class="col-span-12">
+      <section id="getcourses"><!-- parent container for button -->
+        <button type="button" id="gogetcourses" name="gogetcourses" value="Go Get Courses">Go Get Courses</button>
+      </section><!--end section for getcourses1 -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-span-12" id="search-results-div">
+      <section id="search-results"><!-- parent container for Search Results -->
+
+      </section><!--end section for getcourses1 -->
+    </div>
+  </div>  
+
+
+          <div class="row"  id="target-choice-chat">
+            <div class="col-xs-12">
+                <header><h2>Placeholder for Chat</h2></header>
+            </div><!-- closes xs-12 header for chat -->
+            <div class="col-xs-4" id="chat-left-menu">
+                <section>
+                    <header><h3>My Questions</h3></header>
+                    <button type="button" class="btn btn-success-usfsp btn-sm active" style="width:100%;">Ask New</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">How Do I....</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">What Do I....</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Where Do I....</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">When Do I....</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Who Do I....</button>
+                </section>
+            </div><!-- closes xs-4 chat-left-menu -->
+                <div class="col-xs-8" id="chat-main">
+                <section>
+                    <header><h3>Main Area for Chat</h3></header>
+                </section>
+                </div><!-- closes col xs-8 id chat-main -->
+            </div><!-- closes row for target choice chat -->
+
+
+          <div class="row" id="target-choice-faq">
+            <div class="col-xs-12">
+                <header><h2>Placeholder for FAQ</h2></header>
+            </div><!-- closes xs-12 for FAQ header -->
+            <div class="col-xs-4" id="faq-left-menu">
+                <section>
+                    <header><h3>FAQ Placeholder</h3></header>
+                    <button type="button" class="btn btn-success-usfsp btn-sm active" style="width:100%;">Popular FAQ</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">FAQ How</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">FAQ What</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">FAQ Where</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">FAQ When</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">FAQ Who</button>
+                </section>
+            </div><!-- closes xs-4 faq-left-menu -->
+                <div class="col-xs-8" id="faq-main">
+                <section>
+                    <header><h3>FAQ Main Area</h3></header>
+                </section>
+                </div><!-- closes xs-8 id faq-main -->
+            </div><!-- closes row for id target-choice-faq -->
+
+
+          <div class="row" id="target-choice-dashboard">
+            <div class="col-xs-12">
+                <header><h2>Placeholder for Dashboard</h2></header>
+            </div><!-- closes xs-12 header for Dashboard -->
+            <div class="col-xs-4" id="dashboard-left-menu">
+                <section>
+                    <header><h3>Dashboard Placeholder</h3></header>
+                    <button type="button" class="btn btn-success-usfsp btn-sm active" style="width:100%;">Dashboard</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Dashboard 1</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Dashboard 2</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Dashboard 3</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Dashboard 4</button>
+                    <button type="button" class="btn btn-default btn-sm" style="width:100%;">Dashboard 5</button>
+                </section>
+            </div><!-- closes xs-4 id dashboard-left-menu  -->
+                <div class="col-xs-8" id="dashboard-main">
+                <section>
+                    <header><h3>Dashboard More</h3></header>
+                </section>
+                </div><!-- closes xs-8 id dashboard-main -->
+            </div><!-- closes row for id target-choice-dashboard -->
+
+
+
+</div><!-- closes container -->
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+
+                var terms = [['Spring','01'],['Summer','05'],['Fall','08']];
+                d = new Date();
+                d.getFullYear();
+                currentMonth = d.getMonth();
+                currentYear = d.getFullYear();
+                var currentTerm = '';
+                if (currentMonth <= 4) {
+                    currentTerm = 0;
+                } else if (currentMonth >= 5 && currentMonth <= 7) {
+                    currentTerm = 1;
+                } else {
+                    currentTerm = 2;
+                }
+                if (currentTerm < terms.length - 1) {
+                    nextTerm = currentTerm + 1;
+                } else {
+                    nextTerm = 0;
+                }
+                if (currentTerm + 1 < terms.length - 1) {
+                    nextNextTerm = currentTerm + 2;
+                    nextYear = currentYear;
+                    nextNextYear = currentYear;
+                } else if (currentTerm + 1 == terms.length - 1) {
+                    nextNextTerm = 0;
+                    nextYear = currentYear;
+                    nextNextYear = currentYear + 1;
+                } else {
+                    nextNextTerm = 1;
+                    nextYear = currentYear + 1;
+                    nextNextYear = currentYear + 1;
+                }                
+
+                $('#semester-chooser').append ('<button data-term="' + currentYear + terms[currentTerm][1] + '" type="button" class="btn btn-default btn-sm">'+terms[currentTerm][0] + ' ' + currentYear+'</button> <button data-term="' + nextYear + terms[nextTerm][1] + '" type="button" class="btn btn-success-usfsp btn-sm active">'+terms[nextTerm][0] + ' ' + nextYear+'</button> <button data-term="' + nextNextYear + terms[nextNextTerm][1] + '" type="button" class="btn btn-default btn-sm">'+terms[nextNextTerm][0] + ' ' + nextNextYear+'</button>');
+
+  
+
+                $('#custom-search-step-1 button').click(function(){
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        $(this).addClass('btn-default');
+                        $(this).removeClass('btn-success-usfsp');
+                    } else {
+                        $(this).addClass('active');
+                        $(this).removeClass('btn-default');
+                        $(this).addClass('btn-success-usfsp');
+                    }
+                });
+
+
+                // Account for clicks on either institutions, colleges or departments...
+                //Added tab-choice-course, tab-choice-faq, tab-choice-chat, and tab-choice-dashboard to Casey's code
+                $('#institution-step button, #college-step input, #department-step input','#tab-choice-course, #tab-choice-faq, #tab-choice-chat, #tab-choice-dashboard').click(function () {
+                    toggleTop($(this));
+                });
+
+
+                toggleSearchFilters($('#i-stpete'));
+
+                function toggleSearchFilters (target) {
+                    if (target.hasClass('active')) {
+                        target.removeClass('btn-success-usfsp active');
+                        target.addClass('btn-default');  
+                    } else {
+                        target.removeClass('btn-default');
+                        target.addClass('btn-success-usfsp active');      
+                    }
+                    toggleTop(target);
+                }
+
+                function toggleTop (localThis) {
+                    // Capture the specific entity we clicked on...
+                    var targetID = localThis.attr('ID');
+                    // Set default values to off/false for the things we will change...
+                    var displayValue = 'none';
+                    var checkboxValue = false;
+                    // Turn values on if the user turned on a checkbox...
+                    if (localThis.is(':checked', true) || localThis.hasClass('active')) {
+                        var displayValue = 'block';
+                        var checkboxValue = true;            
+                    }
+                    // Check to see what the user clicked, and respond accordingly...
+                    if ($('#institution-step').has(localThis).length > 0) {
+                        var targetStep = '#college-step input';
+                        if (checkboxValue === false) {
+                            var targetStep = targetStep + ', #department-step input';
+                        }
+                    } else if ($('#college-step').has(localThis).length > 0) {
+                        var targetStep = '#department-step input';
+                    } else if ($('#department-step').has(localThis).length > 0) {
+                        // targetStep = 'COURSE';
+                    }
+                    // Perform the update. For everything that matches, toggle the displays and checkboxes...
+                    $(targetStep).each(function() {
+                        if ($(this).hasClass(targetID)) {
+                            $(this).parent().css({'display' : displayValue});
+                            if (!checkboxValue) {
+                                $(this).prop('checked', false);
+                            }
+                        }
+                    });
+
+                    var collegeCount = 0;
+                    $('#department-list').css('display','none');
+                    $('#college-step input').each(function() {
+                        if ($(this).is(':checked', true)) {
+                            collegeCount++;
+                        }
+                    });
+                    if (collegeCount > 0) {
+                        $('#department-list').css('display','block');
+                    }
+
+                }
+
+
+                var departments = [];
+                $("#department-step label").each(function(index) {
+                  departments.push($(this).text().trim() + '%%%' + $(this).attr('for'));
+
+                });
+    
+                $("#autodepartment, #autocampus, #autocourse").keyup(function(){
+                    if ($(this).val().length >= 3) {
+                        var searchTerm = $(this).val().split(' ');
+                        var allMatches = [];
+                        for (i = 0; i < searchTerm.length; i++) { 
+                            var currentTerm = searchTerm[i].trim();
+                            if (currentTerm.length >= 3) {
+
+                                var matcher = new RegExp(currentTerm + "+", "i");
+                                var matches = $.grep(departments, function(item){ return matcher.test(item);});
+                                for (var j = 0; j < matches.length; j++) {
+                                    allMatches.push(matches[j]);
+                                }
+                            }
+                        }
+                        allMatches = allMatches.sort();
+                        var resultList = '';
+                        for (i = 0; i < allMatches.length; i++) {
+                            allMatches[i] = allMatches[i].split('%%%');
+                            resultList += '<li><input type="checkbox" id="'+allMatches[i][1]+'" data-code="'+allMatches[i][1]+'"> <label for="'+allMatches[i][1]+'">' + allMatches[i][0] + '</label></li>';
+                        }
+                        $('#search-results-departments').html('<ul id ="department-result-set">' +resultList+'</ul>');
+                    } else {
+                        $('#search-results-departments').html('');
+                    }
+                });
+
+
+                $('#gogetcourses').click(function () {
+                    beginCourseSearch();
+                });
+
+
+                function beginCourseSearch () {
+
+                    if ($('#custom-course-search').val().length < 3) {
+                        if ($("#low-char-count-warning").length == 0) {
+                            $('#custom-course-search').after(' <span id="low-char-count-warning" class="text-warning">Please enter at least three characters before searching.</span>');
+                        }
+                    } else {
+
+                      $('#gogetcourses').prop('value', 'Searching...');
+                      $('#gogetcourses').attr('disabled', 'disabled');
+                      $('#gogetcourses').addClass('active');
+                      $('#gogetcourses').addClass('btn-success-usfsp');
+                      $('#gogetcourses').html('Searching...');
+
+                      var searchTerm = [];
+                      var searchType = null;
+                      var searchSemester = [];
+
+                      $('#semester-chooser button').each(function () {
+                        if($(this).hasClass('active')){
+                            searchSemester.push($(this).data('term'));
+                        }
+                      });
+
+                      $('ul.nav-tabs li').each(function () {
+                        if ($(this).hasClass('active')) {
+                          switch ($(this).attr('id')) {
+                            case 'tab1' :
+                              searchType = 'typed';
+                              searchTerm.push($('#custom-course-search').val());
+                              console.log('react to tab 1 stuff ' + searchTerm);
+                              break;
+                            case 'tab2' :
+                              $('#department-result-set input').each(function () {
+                                searchType = 'codes';
+                                if ($(this).is(':checked', true)) {
+                                  searchTerm.push($(this).data('code'));
+                                }
+                              });
+                              console.log('react to tab 2 stuff ' + searchTerm);
+                              break;
+                            case 'tab3' :
+                              $('#department-result-set-2 input').each(function () {
+                                searchType = 'codes';
+                                if ($(this).is(':checked', true)) {
+                                  searchTerm.push($(this).attr('id'));
+                                }
+                              });
+                              console.log('react to tab 3 stuff ' + searchTerm);
+                              break;
+                          }
+                        }
+                      });
+
+                      var jqxhr = $.post("search.php", {
+                        searchTermKey: searchTerm, 
+                        searchTypeKey: searchType,
+                        searchSemesterKey: searchSemester
+                      })
+                      .done(function(data) {
+                        $('#gogetcourses').prop('value', 'Go Get Courses');
+                        $('#gogetcourses').removeAttr('disabled');
+                        $('#gogetcourses').removeClass('active');
+                        $('#gogetcourses').removeClass('btn-success-usfsp');
+                        $('#gogetcourses').html('Go Get Courses');
+
+                        if (data != '') {
+                            $('#search-results').html(data);
+
+
+                            $('#search-results li').on('click', function () {
+                                    targetCourse = $(this);
+                                  var jqxhr = $.post("search-details.php", {
+                                    searchSemesterKey: $(this).data('semester'), 
+                                    searchSubjectKey: $(this).data('subject'), 
+                                    searchCRSKey: $(this).data('crs')
+                                  })
+                                  .done(function(data) {
+
+
+                                    if ($(targetCourse).data('details') != true) {
+                                        $(targetCourse).append('<div>'+data+'</div>');
+                                    }
+                                    $(targetCourse).data('details', true);
+
+                                  })
+                                  .fail(function() {
+                                  })
+                                  .always(function() {
+                                  }); 
+
+
+                            });
+
+                        } else {
+                            $('#search-results').html('No results found.');
+                        }
+
+                      })
+                      .fail(function() {
+
+                      })
+                      .always(function() {
+
+                      });      
+
+                  }              
+                }
+
+
+
+
+                $('.nav-tabs a').click(function () {
+                    $('ul.nav-tabs li').removeClass('active');
+                    $(this).parent().addClass('active');
+                    $('.nav-tabs a').each(function () {
+                        $('#search-results-div').empty();
+                        $('#'+$(this).data('target')).css('display','none');
+                    });
+                    $('#'+$(this).data('target')).css('display','block');
+                });
+
+
+                $("#custom-course-search").keyup(function(e){
+                    $('#low-char-count-warning').remove();
+                    var keycode = e.keyCode ? e.keyCode : e.which;
+                    if (keycode == 13) {
+                        beginCourseSearch();
+                    }
+
+                });
+
+
+
+            });
+        </script>
+    </body>
+    <!-- test from Air -->
+</html>
