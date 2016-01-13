@@ -78,10 +78,11 @@
        </div>
 
         <div id="tab-filter-course" class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12" role="search">
                 <section><!-- opening section for tab target one -->
+                <h2 class="sr-only">Search Course Titles</h2>
                   <form id="course-selection-form1" onsubmit="return false;">
-                        <label for="custom-course-search" role="search" class="search-label">Search Course Titles</label>
+                        <label for="custom-course-search" class="search-label">Search Course Titles</label>
                         <input id="custom-course-search" class="search-box">
                   </form><!-- end course-selection-form1 -->
                 </section><!-- container for second form -->
@@ -101,8 +102,8 @@
                     <!-- <h5>By Department input: autodepartment</h5> -->
                         <label for="autodepartment">Department Selections: </label>
                         <input id="autodepartment">
-                        <section id="search-results-departments">
-                    <h4>Search Department Results</h4></section>
+                        <section>
+                    <h4 id="search-results-departments">Search Department Results</h4></section>
 
                 </section><!-- container for second form -->
                 </form><!--end course-selection-form2 -->
