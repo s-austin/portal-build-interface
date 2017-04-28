@@ -22,6 +22,11 @@
     color:#000;
     font-weight:bold;
     text-align:center; 
+    }    
+    .bold-white {
+    color:#fff;
+    font-weight:bold;
+    text-align:center; 
     } 
     .margin-bottom20 {
     margin-bottom:20px;
@@ -31,8 +36,7 @@
     }   
     .margin-top25 {
     margin-top:25px;
-    } 
-   
+    }   
     figcaption {
     color:#007399;
     text-align:center; 
@@ -50,16 +54,16 @@
       
   </div><!-- closes first container -->
   
-  <div class="container-fluid" style="background-color:#a7b7d0;">
+  <div class="container-fluid" style="background-color:#000;">
          <div class="row  margin-top25" >
             <div class="col-md-12 margin-bottom20">
-                <h4 class="bold-black">It starts with an idea</h4>
+                <h4 class="bold-white">It starts with an idea</h4>
                <figure>            
                <img class="center-block" src="https://cloud.githubusercontent.com/assets/10209570/25151010/f655f474-2451-11e7-9fb5-f4cbadfb1843.jpg"
               alt="">
                   <figcaption class="sr-only">Figure A-0. Dr. Frechette's Whiteboard Sketch.</figcaption>
               </figure>
-              <h4 class="bold-black margin-top10" style="text-align:center;">This is the prototype as it was born on a whiteboard, December 1, 2015.</h4>  
+              <h4 class="bold-white margin-top10" style="text-align:center;">This is the prototype as it was born on a whiteboard, December 1, 2015.</h4>  
        
              </div><!-- closes inner div for Early Versions -->
         </div><!-- closes row for start with an idea -->  
@@ -135,10 +139,12 @@
               <h5 class="margin-top10">The first version of the course search page consolidated all the information available from courses offered from all three campuses. This solved multiple problems identified by stakeholders, namely, to bring all the course assets to one location rather than have multiple windows open on the screen. This one feature addressed many usability issues, and also many accessibility issues.</h5>
             </div><!-- closes col-md-4 -->   
          </div><!-- closes row for first group of course search early versions -->
-      
+    
+  </div><!-- closes container -->    
+  <div class="container" style="background-color:#000;">    
           <div class="row margin-top25">
             <div class="col-md-12">
-                <h3 class="bold-blue">A Better Way</h3>
+                <h3 class="bold-white">A Better Way</h3>
                <figure>
                <img class="center-block" src="https://cloud.githubusercontent.com/assets/10209570/25182650/554e01e2-24e3-11e7-9d79-17ae877bb69c.jpg"
               alt="">
@@ -146,6 +152,8 @@
               </figure>
              </div><!-- closes inner div for col md 12 -->
         </div><!-- closes row Better Way area -->
+  </div><!-- closes container for image -->
+  <div class="container">
       
           <div class="row margin-top25"><!-- opens for search results-->               
             <div class="col-md-6">
@@ -246,7 +254,7 @@
 
 
          <div class="row margin-top25"><!-- switch order-->               
-            <div class="col-md-6">
+            <div class="col-md-3">
               <h4 class="bold-blue">Does the Order Make Sense?</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199006/576ecf90-2517-11e7-99b5-ac3dc96f9b6d.jpg"
@@ -254,8 +262,8 @@
                 <figcaption class="sr-only">Figure D-1. Switch Order Stage One</figcaption>
               </figure>
               <h5  class="margin-top10">On small screens, the interface collapsed in a way that did not make sense.</h5>
-            </div><!-- closes col-md-6 -->
-            <div class="col-md-6">
+            </div><!-- closes col-md-3 -->
+            <div class="col-md-3">
               <h4 class="bold-blue">Clean it up.</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25200036/f0b85b78-251a-11e7-9357-552daba57613.jpg"
@@ -263,7 +271,28 @@
                 <figcaption class="sr-only">Figure D-2. Swith Order Stage Two</figcaption>
               </figure>
               <h5 class="margin-top10">Remove unnecessary content that clutters small screens.</h5>
-            </div><!-- closes col-md-6 -->   
+            </div><!-- closes col-md-3 --> 
+             <div class="col-md-3">
+              <h4 class="bold-blue">Is the User Interface the same across browsers?</h4>
+              <figure>
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199784/ffbf95f6-2519-11e7-9d29-9600e7fa09bd.jpg"
+              alt="">
+                <figcaption class="sr-only">Figure D-3. Chrome does not accept all changes</figcaption>
+              </figure>
+              <h5  class="margin-top10">First Stage of Browser Testing: Chrome does not accept all changes.</h5>
+            </div><!-- closes col-md-3 -->
+            <div class="col-md-3">
+              <h4 class="bold-blue">Fixed the Browser Problem</h4>
+              <figure>
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25529334/9d4817b8-2bef-11e7-9767-5d6e21a9c5d6.jpg"
+              alt="">
+                <figcaption class="sr-only">Figure D-4. Adjusted for Viewing In Chrome</figcaption>
+              </figure>
+              <h5  class="margin-top10">First Stage of Browser Testing: Adjusted code for Chrome</h5>
+            </div><!-- closes col-md-3 -->
+           
+           
+           
          </div><!-- closes row for first group of course search early versions --> 
       
       
@@ -274,24 +303,7 @@
         </div>
       
          <div class="row margin-top25"><!-- switch order-->               
-            <div class="col-md-6">
-              <h4 class="bold-blue">Is the User Interface the same across browsers?</h4>
-              <figure>
-               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199784/ffbf95f6-2519-11e7-9d29-9600e7fa09bd.jpg"
-              alt="">
-                <figcaption class="sr-only">Figure D-3. Chrome does not accept all changes</figcaption>
-              </figure>
-              <h5  class="margin-top10">First Stage of Browser Testing: Chrome does not accept all changes.</h5>
-            </div><!-- closes col-md-6 -->
-            <div class="col-md-6">
-              <h4 class="bold-blue">Fixed the Browser Problem</h4>
-              <figure>
-               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25529334/9d4817b8-2bef-11e7-9767-5d6e21a9c5d6.jpg"
-              alt="">
-                <figcaption class="sr-only">Figure D-4. Adjusted for Viewing In Chrome</figcaption>
-              </figure>
-              <h5  class="margin-top10">First Stage of Browser Testing: Adjusted code for Chrome</h5>
-            </div><!-- closes col-md-6 -->
+
          </div><!-- closes row margin-top25 -->  
          
             <div class="row margin-top25">      
