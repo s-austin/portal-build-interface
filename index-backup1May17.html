@@ -17,7 +17,20 @@
     color:#00ace6;
     font-weight:bold;
     text-align:center; 
-    }   
+    }      
+    .bold-black {
+    color:#000;
+    font-weight:bold;
+    text-align:center; 
+    }    
+    .bold-white {
+    color:#fff;
+    font-weight:bold;
+    text-align:center; 
+    } 
+    .white {
+      color:#fff;
+    }  
     .margin-bottom20 {
     margin-bottom:20px;
     }
@@ -26,8 +39,7 @@
     }   
     .margin-top25 {
     margin-top:25px;
-    } 
-   
+    }   
     figcaption {
     color:#007399;
     text-align:center; 
@@ -41,21 +53,25 @@
                 <header itemprop="mainEntityOfPage"><h1 class="bold-blue">Behind the Scenes</h1></header>
                 <h2 class="bold-blue">Building an Interface</h2> 
             </div><!-- closes inner div for header -->
-        </div><!-- closes row for h1 title area -->         
+       </div><!-- closes row for h1 title area -->
+      
+  </div><!-- closes first container -->
   
-         <div class="row  margin-top25 ">
+  <div class="container-fluid" style="background-color:#000;">
+         <div class="row  margin-top25" >
             <div class="col-md-12 margin-bottom20">
-                <h4 class="bold-blue">It starts with an idea</h4>
+                <h3 class="bold-white">It starts with an idea</h3>
                <figure>            
                <img class="center-block" src="https://cloud.githubusercontent.com/assets/10209570/25151010/f655f474-2451-11e7-9fb5-f4cbadfb1843.jpg"
-              alt="whiteboard sketch by Dr. Frechette">
+              alt="">
                   <figcaption class="sr-only">Figure A-0. Dr. Frechette's Whiteboard Sketch.</figcaption>
               </figure>
-              <h4 class="bold-blue margin-top10" style="text-align:center;">This is the prototype as it was born on a whiteboard, December 1, 2015.</h4>  
+              <h4 class="bold-white margin-top10" style="text-align:center;">This is the prototype as it was born on a whiteboard, December 1, 2015.</h4>  
        
              </div><!-- closes inner div for Early Versions -->
         </div><!-- closes row for start with an idea -->  
-      
+  </div><!-- closes container for starts with an idea -->
+  <div class="container">
           <div class="row margin-top25">
             <div class="col-md-12 margin-bottom20">
                 <h3 class="bold-blue">Early Versions</h3>
@@ -67,7 +83,7 @@
               <h4 class="bold-blue">Original Landing Page</h4>
               <figure>            
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25149119/4ec96ad4-244b-11e7-8eaa-86d0bc0d9df1.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-1. A First Version.</figcaption>
               </figure>
               <h5 class="margin-top10">The earliest version, produced in late 2015, was fairly traditional in appearance,
@@ -79,7 +95,7 @@
               <h4 class="bold-blue">Revision One: Course Search</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25136211/55bd991a-2422-11e7-96f9-45bd409d92f7.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-2. Searching by Title</figcaption>
               </figure>
               <h5 class="margin-top10">The customized search and chat were developed in-house by Dr. Casey Frechette in response to the needs outlined from stakeholder interviews, questionaires, and surveys. 
@@ -90,19 +106,19 @@
               <h4 class="bold-blue">Auto-Suggest</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25137599/44e20514-2426-11e7-807b-42b63dabdc1b.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-3. Course Search by Text</figcaption>
               </figure>
               <h5 class="margin-top10">Enter Search Term by Text, with a Google-like auto-complete built in to help users.  Dr. Frechette developed the custom, jQuery auto-complete code in-house.  This was not a third-party integration.</h5>
             </div><!-- closes col-md-4 -->   
          </div><!-- closes row for first group of course search early versions --> 
 
-          <div class="row margin-top25"><!-- opens second row for early versions-->               
+          <div class="row margin-top25" style="padding-bottom:25px;"><!-- opens second row for early versions-->               
             <div class="col-md-4">
               <h4 class="bold-blue">Department Search</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25143962/4f085f16-243a-11e7-948c-bcc4530e642d.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-4. Search By Department </figcaption>
               </figure>
               <h5 class="margin-top10">By aligning with the university's codes for departments, we set up a system where a student could browse and select departments if unfamiliar with the department codes used by the university.</h5>
@@ -111,7 +127,7 @@
               <h4 class="bold-blue">Department Search</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25145994/78c22912-2440-11e7-9b58-14e529ea4e01.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-5. Department Search Results</figcaption>
               </figure>
               <h5  class="margin-top10">The first version of the course search page consolidated all the information available from courses offered from all three campuses.  This solved multiple problems identified by stakeholders, namely, to bring all the course assets to one location rather than have multiple windows open on the screen.  This one feature addressed many usability issues, and also many accessibility issues. </h5>
@@ -120,23 +136,27 @@
               <h4 class="bold-blue">College Search</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25146239/335ae7dc-2441-11e7-8045-32094e775e02.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure A-6. College Search by Text</figcaption>
               </figure>
               <h5 class="margin-top10">The first version of the course search page consolidated all the information available from courses offered from all three campuses. This solved multiple problems identified by stakeholders, namely, to bring all the course assets to one location rather than have multiple windows open on the screen. This one feature addressed many usability issues, and also many accessibility issues.</h5>
             </div><!-- closes col-md-4 -->   
          </div><!-- closes row for first group of course search early versions -->
-      
+    
+  </div><!-- closes container -->    
+  <div class="container-fluid" style="background-color:#000;padding-bottom:25px;">    
           <div class="row margin-top25">
             <div class="col-md-12">
-                <h3 class="bold-blue">A Better Way</h3>
+                <h3 class="bold-white">A Better Way</h3>
                <figure>
                <img class="center-block" src="https://cloud.githubusercontent.com/assets/10209570/25182650/554e01e2-24e3-11e7-9d79-17ae877bb69c.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure B-0. Concept for Scraping</figcaption>
               </figure>
              </div><!-- closes inner div for col md 12 -->
         </div><!-- closes row Better Way area -->
+  </div><!-- closes container for image -->
+  <div class="container">
       
           <div class="row margin-top25"><!-- opens for search results-->               
             <div class="col-md-6">
@@ -155,7 +175,7 @@
               <h4 class="bold-blue">Initial Results</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25183577/f92c16bc-24e5-11e7-88d7-d6cbed83c9e5.jpg"
-              alt="early phase of portal interface">
+              alt="">
                 <figcaption class="sr-only">Figure B-2. First Results Capturing Live Data</figcaption>
               </figure>
               <h5 class="margin-top10">Data as it appeared via a targeted search after implementing code restructuring.</h5>
@@ -167,19 +187,22 @@
                 <h3 class="bold-blue">Now Make It Easy To Understand!</h3>
             </div><!-- closes inner div for header -->
         </div><!-- closes row for easy to understand -->
-      
+   
+  </div><!-- closes container -->    
+      <div class="container-fluid" style="background-color:#000;padding-bottom:25px;">   
       
          <div class="row margin-top25 ">
             <div class="col-md-12">
-              <h4 class="bold-blue">A Boarding Pass To Class</h4>
+              <h4 class="bold-white">A Boarding Pass To Class</h4>
               <figure>
                <img class="img-responsive" style="width:100%;height:auto;" src="https://cloud.githubusercontent.com/assets/10209570/25044422/a5d4648c-20f4-11e7-8185-2885ba3821d2.jpg"
-              alt="Dr. Frechette sketch of an interface designed to look like a boarding pass.">
+              alt="">
                <figcaption class="sr-only">Figure C-0. Dr. Frechette's Next Design Sketch</figcaption>
               </figure>
             </div><!-- closes col-md-12 --> 
         </div><!-- row -->
-
+  </div><!-- closes container -->
+  <div class="container" style="padding-top:25px;padding-bottom:25px;">
       
      <div class="row margin-top25 ">
          <div class="col-md-4">
@@ -229,51 +252,75 @@
            </div><!-- closes col-md-4 -->   
         </div><!-- closes row for group steps four five six--> 
       
+  </div><!-- closes container -->
+  <div class="container-fluid" style="background-color:#000;">
+    
           <div class="row  margin-top25 ">
             <div class="col-md-12">
-                <h3 class="bold-blue">Now Make It Easy To Understand in all Browsers!</h3>
+                <h3 class="bold-white">Now Make It Easy To Understand in all Screens!</h3>
             </div><!-- closes inner div for header -->
         </div><!-- closes row for easy to understand all browsers--> 
-      
+
 
          <div class="row margin-top25"><!-- switch order-->               
-            <div class="col-md-6">
-              <h4 class="bold-blue">Switch Order</h4>
+            <div class="col-md-3">
+              <h4 class="bold-white">Does the Order Make Sense?</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199006/576ecf90-2517-11e7-99b5-ac3dc96f9b6d.jpg"
               alt="">
                 <figcaption class="sr-only">Figure D-1. Switch Order Stage One</figcaption>
               </figure>
-              <h5  class="margin-top10">On small screens, the interface collapsed in a way that did not make sense.</h5>
-            </div><!-- closes col-md-6 -->
-            <div class="col-md-6">
-              <h4 class="bold-blue">Initial Results</h4>
+              <h5 class="margin-top10 white">On small screens, the interface collapsed in a way that did not make sense.</h5>
+            </div><!-- closes col-md-3 -->
+            <div class="col-md-3">
+              <h4 class="bold-white">Clean it up.</h4>
               <figure>
-               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199548/30073cba-2519-11e7-8d3e-0a1536e74461.jpg"
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25200036/f0b85b78-251a-11e7-9357-552daba57613.jpg"
               alt="">
                 <figcaption class="sr-only">Figure D-2. Swith Order Stage Two</figcaption>
               </figure>
-              <h5 class="margin-top10">Hiding unecessary information from small screens.</h5>
-            </div><!-- closes col-md-6 -->   
-         </div><!-- closes row for first group of course search early versions -->  
-      
-         <div class="row margin-top25"><!-- switch order-->               
-            <div class="col-md-12">
-              <h4 class="bold-blue">Make Buttons Mobile</h4>
+              <h5 class="margin-top10 white">Remove unnecessary content that clutters small screens.</h5>
+            </div><!-- closes col-md-3 --> 
+             <div class="col-md-3">
+              <h4 class="bold-white">Browser Check</h4>
               <figure>
                <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25199784/ffbf95f6-2519-11e7-9d29-9600e7fa09bd.jpg"
               alt="">
-                <figcaption class="sr-only">Figure D-3. Make Buttons friendly on mobile devices</figcaption>
+                <figcaption class="sr-only">Figure D-3. Chrome does not accept all changes</figcaption>
               </figure>
-              <h5  class="margin-top10">Make the buttons mobile-friendly</h5>
-            </div><!-- closes col-md-12 -->
-  
-         </div><!-- closes row for first group of course search early versions -->  
-          ![chromestillnotnarrowbutton](https://cloud.githubusercontent.com/assets/10209570/25199784/ffbf95f6-2519-11e7-9d29-9600e7fa09bd.jpg)
-      
-            
-      
+               <h5 class="margin-top10 white">Add code to account for Chrome Display</h5>
+               <figure>
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25529334/9d4817b8-2bef-11e7-9767-5d6e21a9c5d6.jpg"
+              alt="">
+                <figcaption class="sr-only">Figure D-4. Adjusted for Viewing In Chrome</figcaption>
+              </figure>
+            </div><!-- closes col-md-3 -->
+           
+
+            <div class="col-md-3">
+               <h4 class="bold-white">Dropdowns in small screen</h4>
+              <figure>
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25530467/54863ce4-2bf4-11e7-9702-7e0fd6433376.jpg"
+              alt="">
+                <figcaption class="sr-only">Figure E-1. Revisiting the layout to use dropdown menus</figcaption>
+              </figure>
+              <h5 class="margin-top10 white">Readusting buttons to dropdown menus, prior to revising layout and printout/</h5>
+             
+              <figure>
+               <img class="img-responsive" src="https://cloud.githubusercontent.com/assets/10209570/25531890/3d530020-2bf9-11e7-9f5c-42e888da1bff.jpg"
+              alt="">
+                <figcaption class="sr-only">Figure E-3. Dropdown Menu in Small Screen</figcaption>
+              </figure>
+              <h5 class="margin-top10 white">First Stage of converting to dropdown. Next Stage is to Check Functionality.</h5>         
+              
+            </div><!-- closes col-md-3 -->
+                           
+         </div><!-- closes row for margin-top 25 --> 
+      May 1 2017
+     https://cloud.githubusercontent.com/assets/10209570/25531890/3d530020-2bf9-11e7-9f5c-42e888da1bff.jpg
+   src="https://cloud.githubusercontent.com/assets/10209570/25530733/4fe0848c-2bf5-11e7-9db7-3f17ad13ad5a.jpg"    
     </div><!-- closes container -->
   </body>
 </html>
- 
+  
+   
